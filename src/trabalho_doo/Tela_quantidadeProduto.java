@@ -1,6 +1,9 @@
 
 package trabalho_doo;
 
+import java.awt.BorderLayout;
+import javax.swing.SwingUtilities;
+
 public class Tela_quantidadeProduto extends javax.swing.JPanel {
 
     public Tela_quantidadeProduto(String produto) {
@@ -20,11 +23,14 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
     }
 
     public void alteraPreco(){
+        
+        if(tx_preco.getText().isBlank()){
         double quantidade = Double.parseDouble(tx_quantidade.getText());
         double preco = Double.parseDouble(tx_preco.getText());
         
         double result = quantidade * preco;
         lb_valorTotal.setText(String.valueOf(result));
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -37,7 +43,7 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         lb_valorTotal = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        bt_salvar = new javax.swing.JButton();
 
         lb_produto.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lb_produto.setText("<Produto>");
@@ -66,8 +72,13 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Total:");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton1.setText("Salvar");
+        bt_salvar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt_salvar.setText("Salvar");
+        bt_salvar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_salvarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -90,7 +101,7 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bt_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tx_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -113,7 +124,7 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
                     .addComponent(jLabel4)
                     .addComponent(lb_valorTotal))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -122,9 +133,17 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
         alteraPreco();
     }//GEN-LAST:event_tx_quantidadeKeyTyped
 
+    private void bt_salvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_salvarMouseClicked
+           
+            Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
+            janela.getContentPane().remove(Janela.t13);
+            janela.add(Janela.t11, BorderLayout.CENTER);
+            janela.pack();
+    }//GEN-LAST:event_bt_salvarMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton bt_salvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
