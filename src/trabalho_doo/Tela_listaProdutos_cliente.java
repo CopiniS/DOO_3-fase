@@ -1,8 +1,10 @@
 
 package trabalho_doo;
 
+import java.awt.BorderLayout;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.SwingUtilities;
 
 public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     DefaultListModel<String> modelProdutos;
@@ -229,6 +231,11 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         bt_voltar.setForeground(new java.awt.Color(255, 102, 0));
         bt_voltar.setText("Voltar");
+        bt_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_voltarMouseClicked(evt);
+            }
+        });
         bt_voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_voltarActionPerformed(evt);
@@ -260,9 +267,9 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
                             .addComponent(jLabel2)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(bt_addCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -435,8 +442,20 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     }//GEN-LAST:event_cb_fornecedorMouseClicked
 
     private void bt_addCarrinhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_addCarrinhoMouseClicked
-        // TODO add your handling code here:
+            Janela.t13 = new Tela_quantidadeProduto(jList_produtos.getSelectedValue());
+            Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
+            janela.getContentPane().remove(Janela.t11);
+            janela.add(Janela.t13, BorderLayout.CENTER);
+            janela.pack();
     }//GEN-LAST:event_bt_addCarrinhoMouseClicked
+
+    private void bt_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_voltarMouseClicked
+            Janela.t2 = new Tela_login();
+            Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
+            janela.getContentPane().remove(Janela.t11);
+            janela.add(Janela.t2, BorderLayout.CENTER);
+            janela.pack();
+    }//GEN-LAST:event_bt_voltarMouseClicked
         
     
 

@@ -1,8 +1,10 @@
 
 package trabalho_doo;
 
+import java.awt.BorderLayout;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 
 public class Tela_imprimeCatalogo extends javax.swing.JPanel {
@@ -145,6 +147,11 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         bt_voltar.setForeground(new java.awt.Color(255, 102, 0));
         bt_voltar.setText("Voltar");
+        bt_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_voltarMouseClicked(evt);
+            }
+        });
 
         bt_imprime.setBackground(new java.awt.Color(255, 255, 255));
         bt_imprime.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -234,6 +241,14 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
             Preco(separacao());
         }
     }//GEN-LAST:event_bt_imprimeMouseClicked
+
+    private void bt_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_voltarMouseClicked
+        
+        Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
+        janela.getContentPane().remove(Janela.t10);
+        janela.add(Janela.t8, BorderLayout.CENTER);
+        janela.pack();
+    }//GEN-LAST:event_bt_voltarMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

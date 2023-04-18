@@ -12,6 +12,7 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
     public Tela_cadastroProdutos() {
         initComponents();
         listaProdutos = new ArrayList();
+         produtosPrecadastrados();
     }
     
     public Produto criaProduto(){
@@ -26,6 +27,122 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
         p1.setEstoque(tx_estoque.getText());
         
         return p1;
+    }
+    
+    public void produtosPrecadastrados(){
+        Produto p1 = new Produto();
+        Produto p2 = new Produto();
+        Produto p3 = new Produto();
+        Produto p4 = new Produto();
+        Produto p5 = new Produto();
+        Produto p6 = new Produto();
+        Produto p7 = new Produto();
+        Produto p8 = new Produto();
+        Produto p9 = new Produto();
+        Produto p10 = new Produto();
+        Produto p11 = new Produto();
+        
+        
+        p1.setNome("Banana");
+        p1.setCategoria("Fruta");
+        p1.setFornecedor("Via Serra");
+        p1.setMarca("Da terra");
+        p1.setPrecoCusto("5");
+        p1.setPrecoVenda("10");
+        p1.setEstoque("100");
+        
+        p2.setNome("Bolacha agua e sal");
+        p2.setCategoria("bolacha");
+        p2.setFornecedor("mirabel");
+        p2.setMarca("Mirabel");
+        p2.setPrecoCusto("1");
+        p2.setPrecoVenda("1.50");
+        p2.setEstoque("1000");
+        
+        p3.setNome("Maçã");
+        p3.setCategoria("Fruta");
+        p3.setFornecedor("Via Serra");
+        p3.setMarca("fungi");
+        p3.setPrecoCusto("2");
+        p3.setPrecoVenda("6");
+        p3.setEstoque("205");
+        
+        p4.setNome("Pera");
+        p4.setCategoria("Fruta");
+        p4.setFornecedor("Havita");
+        p4.setMarca("Chocolate");
+        p4.setPrecoCusto("3");
+        p4.setPrecoVenda("7");
+        p4.setEstoque("8");
+        
+        p5.setNome("Bacon cubos");
+        p5.setCategoria("Bacon");
+        p5.setFornecedor("Havita");
+        p5.setMarca("fazenda");
+        p5.setPrecoCusto("17");
+        p5.setPrecoVenda("21");
+        p5.setEstoque("250");
+        
+        p6.setNome("Calabresa fatiada");
+        p6.setCategoria("calabresa");
+        p6.setFornecedor("franciosi");
+        p6.setMarca("Perdigao");
+        p6.setPrecoCusto("16.99");
+        p6.setPrecoVenda("10");
+        p6.setEstoque("100");
+        
+        p7.setNome("Bacon fatiado");
+        p7.setCategoria("Bacon");
+        p7.setFornecedor("franciosi");
+        p7.setMarca("Perdigao");
+        p7.setPrecoCusto("20");
+        p7.setPrecoVenda("30");
+        p7.setEstoque("300");
+        
+        p8.setNome("Bacon manta");
+        p8.setCategoria("bacon");
+        p8.setFornecedor("Via Serra");
+        p8.setMarca("Perdigao");
+        p8.setPrecoCusto("5");
+        p8.setPrecoVenda("10");
+        p8.setEstoque("100");
+        
+        p9.setNome("amora");
+        p9.setCategoria("Fruta");
+        p9.setFornecedor("Via Serra");
+        p9.setMarca("Da terra");
+        p9.setPrecoCusto("5");
+        p9.setPrecoVenda("10");
+        p9.setEstoque("100");
+        
+        p10.setNome("melancia");
+        p10.setCategoria("Fruta");
+        p10.setFornecedor("Via Serra");
+        p10.setMarca("Da terra");
+        p10.setPrecoCusto("5");
+        p10.setPrecoVenda("10");
+        p10.setEstoque("100");
+        
+        p11.setNome("melão");
+        p11.setCategoria("Fruta");
+        p11.setFornecedor("Via Serra");
+        p11.setMarca("Da terra");
+        p11.setPrecoCusto("5");
+        p11.setPrecoVenda("10");
+        p11.setEstoque("100");
+        
+        
+        listaProdutos.add(p1);
+        listaProdutos.add(p2);
+        listaProdutos.add(p3);
+        listaProdutos.add(p4);
+        listaProdutos.add(p5);
+        listaProdutos.add(p6);
+        listaProdutos.add(p7);
+        listaProdutos.add(p8);
+        listaProdutos.add(p9);
+        listaProdutos.add(p10);
+        listaProdutos.add(p11);
     }
     
     public void limparTextos(){
@@ -62,11 +179,11 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
         }
         return existeErro;
     }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -95,94 +212,49 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
         jButton1.setText("Salvar");
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(new java.awt.GridBagLayout());
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 102, 0));
         jLabel1.setText("Cadastro de Produtos");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 19;
-        gridBagConstraints.ipadx = 45;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 4, 0, 0);
-        add(jLabel1, gridBagConstraints);
+        add(jLabel1);
+        jLabel1.setBounds(145, 41, 293, 32);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 102, 51));
         jLabel2.setText("Nome: ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 39, 0, 0);
-        add(jLabel2, gridBagConstraints);
+        add(jLabel2);
+        jLabel2.setBounds(83, 113, 58, 27);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 102, 51));
         jLabel4.setText("Preço de custo:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 28;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 39, 0, 0);
-        add(jLabel4, gridBagConstraints);
+        add(jLabel4);
+        jLabel4.setBounds(83, 152, 149, 27);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 102, 51));
         jLabel5.setText("Fornecedor:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 6;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 39, 0, 0);
-        add(jLabel5, gridBagConstraints);
+        add(jLabel5);
+        jLabel5.setBounds(83, 200, 100, 27);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 102, 51));
         jLabel6.setText("Preço de venda:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 20;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 11;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 23, 0, 0);
-        add(jLabel6, gridBagConstraints);
+        add(jLabel6);
+        jLabel6.setBounds(461, 152, 137, 27);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 102, 51));
         jLabel7.setText("Marca:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 20;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 84, 0, 0);
-        add(jLabel7, gridBagConstraints);
+        add(jLabel7);
+        jLabel7.setBounds(522, 200, 64, 27);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 102, 51));
         jLabel8.setText("Estoque:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 32;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(32, 39, 0, 0);
-        add(jLabel8, gridBagConstraints);
+        add(jLabel8);
+        jLabel8.setBounds(83, 259, 100, 25);
 
         tx_nome.setBackground(new java.awt.Color(255, 255, 255));
         tx_nome.addActionListener(new java.awt.event.ActionListener() {
@@ -190,38 +262,19 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
                 tx_nomeActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 18;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipadx = 218;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(42, 12, 0, 0);
-        add(tx_nome, gridBagConstraints);
+        add(tx_nome);
+        tx_nome.setBounds(153, 115, 282, 22);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 102, 51));
         jLabel9.setText("Categoria:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 20;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 15;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(41, 65, 0, 0);
-        add(jLabel9, gridBagConstraints);
+        add(jLabel9);
+        jLabel9.setBounds(503, 114, 95, 25);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 102, 51));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 22;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 108;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 49, 0, 0);
-        add(jLabel10, gridBagConstraints);
+        add(jLabel10);
+        jLabel10.setBounds(0, 0, 0, 0);
 
         tx_precoCusto.setBackground(new java.awt.Color(255, 255, 255));
         tx_precoCusto.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -229,26 +282,12 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
                 tx_precoCustoKeyTyped(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 9;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 9;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 80;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(14, 6, 0, 0);
-        add(tx_precoCusto, gridBagConstraints);
+        add(tx_precoCusto);
+        tx_precoCusto.setBounds(238, 154, 144, 22);
 
         tx_fornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 88;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
-        add(tx_fornecedor, gridBagConstraints);
+        add(tx_fornecedor);
+        tx_fornecedor.setBounds(203, 202, 152, 22);
 
         tx_estoque.setBackground(new java.awt.Color(255, 255, 255));
         tx_estoque.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -256,15 +295,8 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
                 tx_estoqueKeyTyped(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 8;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(33, 6, 0, 0);
-        add(tx_estoque, gridBagConstraints);
+        add(tx_estoque);
+        tx_estoque.setBounds(189, 260, 164, 22);
 
         tx_precoVenda.setBackground(new java.awt.Color(255, 255, 255));
         tx_precoVenda.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -272,36 +304,16 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
                 tx_precoVendaKeyTyped(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 22;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipadx = 96;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 6, 0, 0);
-        add(tx_precoVenda, gridBagConstraints);
+        add(tx_precoVenda);
+        tx_precoVenda.setBounds(604, 160, 160, 22);
 
         tx_marca.setBackground(new java.awt.Color(255, 255, 255));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 22;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 163;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 6, 0, 0);
-        add(tx_marca, gridBagConstraints);
+        add(tx_marca);
+        tx_marca.setBounds(604, 202, 227, 22);
 
         tx_categoria.setBackground(new java.awt.Color(255, 255, 255));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 22;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipadx = 144;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(42, 0, 0, 0);
-        add(tx_categoria, gridBagConstraints);
+        add(tx_categoria);
+        tx_categoria.setBounds(598, 115, 208, 22);
 
         bt_voltar.setBackground(new java.awt.Color(255, 255, 255));
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -312,24 +324,10 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
                 bt_voltarMouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 13;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 36;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 36, 29, 0);
-        add(bt_voltar, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 27;
-        gridBagConstraints.ipadx = 896;
-        gridBagConstraints.ipady = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(127, 0, 0, 0);
-        add(jSeparator1, gridBagConstraints);
+        add(bt_voltar);
+        bt_voltar.setBounds(80, 434, 113, 34);
+        add(jSeparator1);
+        jSeparator1.setBounds(-16, 411, 1050, 11);
 
         bt_salvar.setBackground(new java.awt.Color(255, 255, 255));
         bt_salvar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -340,14 +338,8 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
                 bt_salvarMouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 25;
-        gridBagConstraints.gridy = 13;
-        gridBagConstraints.ipadx = 36;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 43, 29, 0);
-        add(bt_salvar, gridBagConstraints);
+        add(bt_salvar);
+        bt_salvar.setBounds(874, 434, 113, 34);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tx_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_nomeActionPerformed
