@@ -9,6 +9,7 @@ public class Produto {
     String precoCusto;
     String precoVenda;
     String estoque;
+    int quantidade;
 
     public Produto() {
         this.nome = null;
@@ -18,6 +19,7 @@ public class Produto {
         this.precoCusto = null;
         this.precoVenda = null;
         this.estoque = null;
+        this.quantidade = 0;
     }
 
     public String getNome() {
@@ -74,6 +76,14 @@ public class Produto {
 
     public void setEstoque(String estoque) {
         this.estoque = estoque;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
     
     

@@ -12,6 +12,7 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     ArrayList<Produto> listaFiltrosFor;
     ArrayList<Produto> listaFiltrosMarca;
     ArrayList<Produto> listaFiltrosGeral;
+    static ArrayList<Produto> listaAdicionados;
     
     public Tela_listaProdutos_cliente(Cliente clientelogado) {
         initComponents();
@@ -20,6 +21,7 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         jList_produtos.setModel(modelProdutos);
         iniciarJlists();
         iniciarComboBox();
+        listaAdicionados = new ArrayList();
         
         
         
@@ -218,6 +220,11 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         bt_irCarrinho.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         bt_irCarrinho.setForeground(new java.awt.Color(255, 102, 0));
         bt_irCarrinho.setText("Ir ao Carrinho");
+        bt_irCarrinho.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_irCarrinhoMouseClicked(evt);
+            }
+        });
         bt_irCarrinho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_irCarrinhoActionPerformed(evt);
@@ -456,6 +463,13 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
             janela.add(Janela.t2, BorderLayout.CENTER);
             janela.pack();
     }//GEN-LAST:event_bt_voltarMouseClicked
+
+    private void bt_irCarrinhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_irCarrinhoMouseClicked
+        Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
+        janela.getContentPane().remove(Janela.t11);
+        janela.add(Janela.t12, BorderLayout.CENTER);
+        janela.pack();
+    }//GEN-LAST:event_bt_irCarrinhoMouseClicked
         
     
 

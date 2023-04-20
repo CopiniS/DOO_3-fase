@@ -16,8 +16,8 @@ public class Janela extends javax.swing.JFrame {
     static Tela_editarProdutos t9;
     static Tela_alteracaoEstoque t10;
     static Tela_listaProdutos_cliente t11;
-    static Tela_carrinho t12;
     static Tela_quantidadeProduto t13;
+    static Tela_carrinho t12;
     
     public Janela() {
         initComponents();
@@ -32,8 +32,9 @@ public class Janela extends javax.swing.JFrame {
         t9 = new Tela_editarProdutos(null);
         t10 = new Tela_alteracaoEstoque(null);
         t11 = new Tela_listaProdutos_cliente(null);
-        t12 = new Tela_carrinho();
         t13 = new Tela_quantidadeProduto(null);
+        t12 = new Tela_carrinho();
+        
         
         
         this.setLayout(new BorderLayout());

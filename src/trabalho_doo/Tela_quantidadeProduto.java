@@ -2,14 +2,19 @@
 package trabalho_doo;
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
 import javax.swing.SwingUtilities;
 
 public class Tela_quantidadeProduto extends javax.swing.JPanel {
-
+    
+    String produtoTxt;
+    
     public Tela_quantidadeProduto(String produto) {
         initComponents();
+        this.produtoTxt = produto;
         tx_preco.setText(achaProduto(produto).getPrecoVenda());
         tx_preco.setEnabled(false);
+        
     }
     
     public Produto achaProduto(String nome){
@@ -134,11 +139,14 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
     }//GEN-LAST:event_tx_quantidadeKeyTyped
 
     private void bt_salvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_salvarMouseClicked
-           
-            Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
-            janela.getContentPane().remove(Janela.t13);
-            janela.add(Janela.t11, BorderLayout.CENTER);
-            janela.pack();
+        
+        Tela_listaProdutos_cliente.listaAdicionados.add(achaProduto(produtoTxt));
+        achaProduto(produtoTxt).setQuantidade(Integer.parseInt(tx_quantidade.getText()));
+        
+        Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
+        janela.getContentPane().remove(Janela.t13);
+        janela.add(Janela.t11, BorderLayout.CENTER);
+        janela.pack();
     }//GEN-LAST:event_bt_salvarMouseClicked
 
 

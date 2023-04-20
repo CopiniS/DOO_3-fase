@@ -15,22 +15,26 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
     
     public ArrayList separacao(){
         ArrayList<Produto> listaOrdenada = new ArrayList();
+        
         if(rb_categoria.isSelected()){
             listaOrdenada.add(Tela_cadastroProdutos.listaProdutos.get(0));
             for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
-                for(int j=i+1; j<Tela_cadastroProdutos.listaProdutos.size(); j++){
-                    if(Tela_cadastroProdutos.listaProdutos.get(i).getCategoria().equals(Tela_cadastroProdutos.listaProdutos.get(j).getCategoria())){
-                        listaOrdenada.add(Tela_cadastroProdutos.listaProdutos.get(j));
+                for(int j=0; j<Tela_cadastroProdutos.listaProdutos.size(); j++){
+                    if(Tela_cadastroProdutos.listaProdutos.get(i).getCategoria().equalsIgnoreCase(Tela_cadastroProdutos.listaProdutos.get(j).getCategoria())
+                            && !listaOrdenada.contains(Tela_cadastroProdutos.listaProdutos.get(j))){
+                            listaOrdenada.add(Tela_cadastroProdutos.listaProdutos.get(j));
                     }
                 }
+                
             }
         }
         
         else if(rb_forndecedor.isSelected()){
             listaOrdenada.add(Tela_cadastroProdutos.listaProdutos.get(0));
             for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
-                for(int j=i+1; j<Tela_cadastroProdutos.listaProdutos.size(); i++){
-                    if(Tela_cadastroProdutos.listaProdutos.get(i).getFornecedor().equals(Tela_cadastroProdutos.listaProdutos.get(j).getFornecedor())){
+                for(int j=0; j<Tela_cadastroProdutos.listaProdutos.size(); j++){
+                    if(Tela_cadastroProdutos.listaProdutos.get(i).getFornecedor().equalsIgnoreCase(Tela_cadastroProdutos.listaProdutos.get(j).getFornecedor())
+                        && !listaOrdenada.contains(Tela_cadastroProdutos.listaProdutos.get(j))){
                         listaOrdenada.add(Tela_cadastroProdutos.listaProdutos.get(j));
                     }
                 }
@@ -40,8 +44,9 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
         else{
             listaOrdenada.add(Tela_cadastroProdutos.listaProdutos.get(0));
             for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
-                for(int j=i+1; j<Tela_cadastroProdutos.listaProdutos.size(); i++){
-                    if(Tela_cadastroProdutos.listaProdutos.get(i).getMarca().equals(Tela_cadastroProdutos.listaProdutos.get(j).getMarca())){
+                for(int j=0; j<Tela_cadastroProdutos.listaProdutos.size(); i++){
+                    if(Tela_cadastroProdutos.listaProdutos.get(i).getMarca().equalsIgnoreCase(Tela_cadastroProdutos.listaProdutos.get(j).getMarca())
+                        && !listaOrdenada.contains(Tela_cadastroProdutos.listaProdutos.get(j))){
                         listaOrdenada.add(Tela_cadastroProdutos.listaProdutos.get(j));
                     }
                 }
@@ -55,21 +60,22 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
             
             for(int i =0; i<listaOrdenada.size();i++){
                  System.out.println(listaOrdenada.get(i).nome + " - Categoria: " + listaOrdenada.get(i).getCategoria() + " - Fornecedor: " + listaOrdenada.get(i).fornecedor + " - Marca: " +
-                                    listaOrdenada.get(i).getMarca() + " - Preço: " + listaOrdenada.get(i).precoVenda);       
+                                    listaOrdenada.get(i).getMarca() + " - Preço: " + listaOrdenada.get(i).precoVenda + "\n");       
             }
         }
         
         else if(rb_custoVenda.isSelected()){
             for(int i =0; i<listaOrdenada.size();i++){
                  System.out.println(listaOrdenada.get(i).nome + " - Categoria: " + listaOrdenada.get(i).getCategoria() + " - Fornecedor: " + listaOrdenada.get(i).fornecedor + " - Marca: " +
-                                    listaOrdenada.get(i).getMarca() + " - Preço de custo: " + listaOrdenada.get(i).precoCusto + " - Preço de Venda: " + listaOrdenada.get(i).precoVenda);  
+                                    listaOrdenada.get(i).getMarca() + " - Preço de custo: " + listaOrdenada.get(i).precoCusto + " - Preço de Venda: " + listaOrdenada.get(i).precoVenda + "\n");  
             }
         }
        
         else{
             for(int i =0; i<listaOrdenada.size();i++){
-                 System.out.println(listaOrdenada.get(i).nome + " - CAtegoria: " + listaOrdenada.get(i).getCategoria() + " - Fornecedor: " + listaOrdenada.get(i).fornecedor + " - Marca: " +
-                                    listaOrdenada.get(i).getMarca());     
+                 System.out.println(listaOrdenada.get(i).nome + " - Categoria: " + listaOrdenada.get(i).getCategoria() + " - Fornecedor: " + listaOrdenada.get(i).fornecedor + " - Marca: " +
+                                    listaOrdenada.get(i).getMarca() + "\n");   
+                 
             }
         }
     }
@@ -191,7 +197,7 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
                         .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(bt_imprime, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
             .addComponent(jSeparator1)
         );
         layout.setVerticalGroup(
@@ -232,7 +238,7 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Selecione um método de separação", "ERRO", JOptionPane.ERROR_MESSAGE);
         }
         
-        else if(!rb_somenteVenda.isSelected() && !rb_custoVenda.isSelected() && !rb_custoVenda.isSelected()){
+        else if(!rb_somenteVenda.isSelected() && !rb_custoVenda.isSelected() && !rb_naoPrecos.isSelected()){
             JOptionPane.showMessageDialog(null, "Selecione um método de Preço", "ERRO", JOptionPane.ERROR_MESSAGE);
             
         }
@@ -243,10 +249,9 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
     }//GEN-LAST:event_bt_imprimeMouseClicked
 
     private void bt_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_voltarMouseClicked
-        
         Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
-        janela.getContentPane().remove(Janela.t10);
-        janela.add(Janela.t8, BorderLayout.CENTER);
+        janela.getContentPane().remove(Janela.t8);
+        janela.add(Janela.t6, BorderLayout.CENTER);
         janela.pack();
     }//GEN-LAST:event_bt_voltarMouseClicked
 
