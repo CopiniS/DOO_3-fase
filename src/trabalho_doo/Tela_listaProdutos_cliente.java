@@ -465,6 +465,7 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     }//GEN-LAST:event_bt_voltarMouseClicked
 
     private void bt_irCarrinhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_irCarrinhoMouseClicked
+        Janela.t12 = new Tela_carrinho();
         Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
         janela.getContentPane().remove(Janela.t11);
         janela.add(Janela.t12, BorderLayout.CENTER);

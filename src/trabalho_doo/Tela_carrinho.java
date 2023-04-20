@@ -8,16 +8,16 @@ public class Tela_carrinho extends javax.swing.JPanel {
     public Tela_carrinho() {
         initComponents();
         
-        if(!Tela_listaProdutos_cliente.listaAdicionados.isEmpty()){
-            System.out.println("aaa");
+        
         DefaultTableModel model = (DefaultTableModel) tb_adicionados.getModel();
-            for (int i = 0; i < Tela_cadastroProdutos.listaProdutos.size(); i++) {             
+            for (int i = 0; i < Tela_listaProdutos_cliente.listaAdicionados.size(); i++) {        
+                System.out.println(Tela_listaProdutos_cliente.listaAdicionados.get(i).getNome());
                 Object[] dados = {Tela_listaProdutos_cliente.listaAdicionados.get(i).getNome(), 
                 Tela_listaProdutos_cliente.listaAdicionados.get(i).getQuantidade(),
                 Tela_listaProdutos_cliente.listaAdicionados.get(i).getPrecoVenda()};
                 model.addRow(dados);  
             }
-        }
+        
     }
 
     @SuppressWarnings("unchecked")
