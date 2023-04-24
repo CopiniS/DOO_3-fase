@@ -1,22 +1,43 @@
 
 package trabalho_doo;
 
+import java.awt.BorderLayout;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
 public class Tela_carrinho extends javax.swing.JPanel {
-
-    public Tela_carrinho() {
+    Cliente clienteLogado;
+    DefaultTableModel model;
+            
+    public Tela_carrinho(Cliente clienteLogado) {
         initComponents();
+        this.clienteLogado = clienteLogado;
         
-        
-        DefaultTableModel model = (DefaultTableModel) tb_adicionados.getModel();
+        model = new DefaultTableModel();
+        inicializaModelTabela();
+        calculaValorTotal();
+    }
+    
+    public void inicializaModelTabela(){
+            model = (DefaultTableModel) tb_adicionados.getModel();
             for (int i = 0; i < Tela_listaProdutos_cliente.listaAdicionados.size(); i++) {        
-                System.out.println(Tela_listaProdutos_cliente.listaAdicionados.get(i).getNome());
                 Object[] dados = {Tela_listaProdutos_cliente.listaAdicionados.get(i).getNome(), 
                 Tela_listaProdutos_cliente.listaAdicionados.get(i).getQuantidade(),
                 Tela_listaProdutos_cliente.listaAdicionados.get(i).getPrecoVenda()};
                 model.addRow(dados);  
             }
+           
+    }
+    
+    public void calculaValorTotal(){
+        double valorTotal = 0;
+        double valorPorProduto;
+        for(Produto produto : Tela_listaProdutos_cliente.listaAdicionados){
+            valorPorProduto = (double) (produto.quantidade) * Double.parseDouble(produto.precoVenda);
+            valorTotal = valorTotal + valorPorProduto;
+        }
+        lb_valorTotal.setText(String.valueOf(valorTotal));
     }
 
     @SuppressWarnings("unchecked")
@@ -48,12 +69,27 @@ public class Tela_carrinho extends javax.swing.JPanel {
 
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         bt_voltar.setText("Voltar");
+        bt_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_voltarMouseClicked(evt);
+            }
+        });
 
         bt_notaFiscal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         bt_notaFiscal.setText("Nota Fiscal");
+        bt_notaFiscal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_notaFiscalMouseClicked(evt);
+            }
+        });
 
         bt_remover.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         bt_remover.setText("Remover ");
+        bt_remover.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_removerMouseClicked(evt);
+            }
+        });
 
         lb_valorTotal.setText("<valor tota>");
 
@@ -96,9 +132,9 @@ public class Tela_carrinho extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(bt_notaFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90)
+                        .addGap(76, 76, 76)
                         .addComponent(bt_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71)
+                        .addGap(85, 85, 85)
                         .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -107,6 +143,48 @@ public class Tela_carrinho extends javax.swing.JPanel {
                 .addContainerGap(53, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bt_notaFiscalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_notaFiscalMouseClicked
+        System.out.println("Cliente: "+ clienteLogado.getNome());
+        System.out.println("CPF: " + clienteLogado.getCpf());
+        System.out.println("//////////////////////////////");
+        System.out.println("Produtos comprados: \n");
+        for(Produto produto : Tela_listaProdutos_cliente.listaAdicionados){
+            System.out.println("Produto: " + produto.nome + "   Marca: " + produto.marca + "\n");
+        }
+        
+        
+    }//GEN-LAST:event_bt_notaFiscalMouseClicked
+
+    private void bt_removerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_removerMouseClicked
+        if(tb_adicionados.getSelectedRow() == -1){
+            JOptionPane.showMessageDialog(null, "Nenhum produto selecionado", "ERRO", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        else{
+            model.removeRow(tb_adicionados.getSelectedRow());
+            System.out.println(tb_adicionados.getSelectedRow());
+            Tela_listaProdutos_cliente.listaAdicionados.remove(tb_adicionados.getSelectedRow());
+            
+            if(Tela_cadastro_admi.listaAdministradores.isEmpty()){
+                Janela.t11 = new Tela_listaProdutos_cliente(null);
+                Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
+                janela.getContentPane().remove(Janela.t12);
+                janela.add(Janela.t11, BorderLayout.CENTER);
+                janela.pack();
+            }
+        }
+        
+        
+    }//GEN-LAST:event_bt_removerMouseClicked
+
+    private void bt_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_voltarMouseClicked
+        Janela.t11 = new Tela_listaProdutos_cliente(null);
+        Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
+        janela.getContentPane().remove(Janela.t12);
+        janela.add(Janela.t11, BorderLayout.CENTER);
+        janela.pack();
+    }//GEN-LAST:event_bt_voltarMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
