@@ -21,10 +21,10 @@ public class Tela_carrinho extends javax.swing.JPanel {
     
     public void inicializaModelTabela(){
             model = (DefaultTableModel) tb_adicionados.getModel();
-            for (int i = 0; i < Tela_listaProdutos_cliente.listaAdicionados.size(); i++) {        
-                Object[] dados = {Tela_listaProdutos_cliente.listaAdicionados.get(i).getNome(), 
-                Tela_listaProdutos_cliente.listaAdicionados.get(i).getQuantidade(),
-                Tela_listaProdutos_cliente.listaAdicionados.get(i).getPrecoVenda()};
+            for (int i = 0; i < Tela_Inicial.listaAdicionados.size(); i++) {        
+                Object[] dados = {Tela_Inicial.listaAdicionados.get(i).getNome(), 
+                Tela_Inicial.listaAdicionados.get(i).getQuantidade(),
+                Tela_Inicial.listaAdicionados.get(i).getPrecoVenda()};
                 model.addRow(dados);  
             }
            
@@ -33,7 +33,7 @@ public class Tela_carrinho extends javax.swing.JPanel {
     public void calculaValorTotal(){
         double valorTotal = 0;
         double valorPorProduto;
-        for(Produto produto : Tela_listaProdutos_cliente.listaAdicionados){
+        for(Produto produto : Tela_Inicial.listaAdicionados){
             valorPorProduto = (double) (produto.quantidade) * Double.parseDouble(produto.precoVenda);
             valorTotal = valorTotal + valorPorProduto;
         }
@@ -52,6 +52,7 @@ public class Tela_carrinho extends javax.swing.JPanel {
         bt_remover = new javax.swing.JButton();
         lb_valorTotal = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        bt_editar = new javax.swing.JButton();
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 102, 0));
@@ -95,6 +96,14 @@ public class Tela_carrinho extends javax.swing.JPanel {
 
         jLabel2.setText("Total:");
 
+        bt_editar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt_editar.setText("Editar");
+        bt_editar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_editarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,10 +115,10 @@ public class Tela_carrinho extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(bt_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(bt_notaFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(bt_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bt_notaFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bt_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -132,11 +141,13 @@ public class Tela_carrinho extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(bt_notaFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(76, 76, 76)
+                        .addGap(51, 51, 51)
                         .addComponent(bt_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(85, 85, 85)
-                        .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)
+                        .addComponent(bt_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lb_valorTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -149,7 +160,7 @@ public class Tela_carrinho extends javax.swing.JPanel {
         System.out.println("CPF: " + clienteLogado.getCpf());
         System.out.println("//////////////////////////////");
         System.out.println("Produtos comprados: \n");
-        for(Produto produto : Tela_listaProdutos_cliente.listaAdicionados){
+        for(Produto produto : Tela_Inicial.listaAdicionados){
             System.out.println("Produto: " + produto.nome + "   Marca: " + produto.marca + "\n");
         }
         
@@ -159,12 +170,12 @@ public class Tela_carrinho extends javax.swing.JPanel {
     private void bt_removerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_removerMouseClicked
         if(tb_adicionados.getSelectedRow() != -1){
             
-            Tela_listaProdutos_cliente.listaAdicionados.remove(tb_adicionados.getSelectedRow());
+            Tela_Inicial.listaAdicionados.remove(tb_adicionados.getSelectedRow());
             model.removeRow(tb_adicionados.getSelectedRow());
             calculaValorTotal();
             
-            if(Tela_listaProdutos_cliente.listaAdicionados.isEmpty()){
-                Janela.t11 = new Tela_listaProdutos_cliente(null);
+            if(Tela_Inicial.listaAdicionados.isEmpty()){
+                Janela.t11 = new Tela_listaProdutos_cliente(clienteLogado);
                 Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
                 janela.getContentPane().remove(Janela.t12);
                 janela.add(Janela.t11, BorderLayout.CENTER);
@@ -180,15 +191,20 @@ public class Tela_carrinho extends javax.swing.JPanel {
     }//GEN-LAST:event_bt_removerMouseClicked
 
     private void bt_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_voltarMouseClicked
-        Janela.t11 = new Tela_listaProdutos_cliente(null);
+        
         Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
         janela.getContentPane().remove(Janela.t12);
         janela.add(Janela.t11, BorderLayout.CENTER);
         janela.pack();
     }//GEN-LAST:event_bt_voltarMouseClicked
 
+    private void bt_editarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_editarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_editarMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_editar;
     private javax.swing.JButton bt_notaFiscal;
     private javax.swing.JButton bt_remover;
     private javax.swing.JButton bt_voltar;

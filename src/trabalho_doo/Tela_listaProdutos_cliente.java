@@ -9,26 +9,25 @@ import javax.swing.SwingUtilities;
 public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     DefaultListModel<String> modelProdutos;
     ArrayList<Produto> listaFiltrosCat;
-    ArrayList<Produto> listaFiltrosFor;
     ArrayList<Produto> listaFiltrosMarca;
     ArrayList<Produto> listaFiltrosGeral;
-    static ArrayList<Produto> listaAdicionados;
     Cliente clienteLogado;
+    
     
     public Tela_listaProdutos_cliente(Cliente clientelogado) {
         initComponents();
         
         modelProdutos = new DefaultListModel<>();
         jList_produtos.setModel(modelProdutos);
-        iniciarJlists();
-        iniciarComboBox();
-        listaAdicionados = new ArrayList();
         listaFiltrosCat = new ArrayList();
         listaFiltrosMarca = new ArrayList();
-        listaFiltrosFor = new ArrayList();
         listaFiltrosGeral = new ArrayList();
         this.clienteLogado = clientelogado;
         tx_infosProduto.setEnabled(false);
+        iniciarComboBox();
+        iniciarJlists();
+        
+        
         
     }
     
@@ -39,24 +38,19 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
                 modelProdutos.addElement(Tela_cadastroProdutos.listaProdutos.get(i).getNome());
            }
         }
+        
+        limparItensAdicionados();
     }
     
     public void iniciarComboBox(){
         
         ArrayList<String> listaExclusivosCategoria = new ArrayList();
-        ArrayList<String> listaExclusivosFornecedor = new ArrayList();
         ArrayList<String> listaExclusivosMarca = new ArrayList();
         
         
         for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
                 if(!listaExclusivosCategoria.contains(Tela_cadastroProdutos.listaProdutos.get(i).getCategoria())){
                     listaExclusivosCategoria.add(Tela_cadastroProdutos.listaProdutos.get(i).getCategoria());
-            }
-        }
-        
-        for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
-                if(!listaExclusivosFornecedor.contains(Tela_cadastroProdutos.listaProdutos.get(i).getFornecedor())){
-                    listaExclusivosFornecedor.add(Tela_cadastroProdutos.listaProdutos.get(i).getFornecedor());
             }
         }
         
@@ -68,61 +62,66 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         }
         
         cb_categoria.addItem("");
-        cb_fornecedor.addItem("");
         cb_marca.addItem("");
+        
         for(int i=0; i<listaExclusivosCategoria.size(); i++){
             cb_categoria.addItem(listaExclusivosCategoria.get(i));
         }
-        for(int i=0; i<listaExclusivosFornecedor.size(); i++){
-            cb_fornecedor.addItem(listaExclusivosFornecedor.get(i));
-        }
+        
         for(int i=0; i<listaExclusivosMarca.size(); i++){
             cb_marca.addItem(listaExclusivosMarca.get(i));
         }
     }
     
     public void FiltrarLista(){
+        listaFiltrosGeral = new ArrayList();
         
-        if(listaFiltrosCat.equals("") && listaFiltrosFor.equals("")) {
+        try{
+        if(cb_categoria.getSelectedItem().equals("") && !cb_marca.getSelectedItem().equals("")) {
             listaFiltrosGeral = listaFiltrosMarca;
         } 
-        else if(listaFiltrosCat.equals("") && listaFiltrosMarca.equals("")) {
-            listaFiltrosGeral = listaFiltrosFor;
-        }   
-        else if(listaFiltrosFor.equals("") && listaFiltrosMarca.equals("")) {
-            listaFiltrosGeral = listaFiltrosFor;
-        } 
-        else {
-        
-            for(int i=0; i<listaFiltrosCat.size(); i++){
-                if(listaFiltrosFor.contains(listaFiltrosCat.get(i)) && listaFiltrosMarca.contains(listaFiltrosCat.get(i))){
-                    listaFiltrosGeral.add(listaFiltrosCat.get(i));
-                }
-            }
-            
-            for(int i=0; i<listaFiltrosFor.size(); i++){
-                if(listaFiltrosCat.contains(listaFiltrosFor.get(i)) && listaFiltrosMarca.contains(listaFiltrosFor.get(i))){
-                    listaFiltrosGeral.add(listaFiltrosFor.get(i));
-                }
-            }
-            
-            for(int i=0; i<listaFiltrosMarca.size(); i++){
-                if(listaFiltrosFor.contains(listaFiltrosMarca.get(i)) && listaFiltrosCat.contains(listaFiltrosMarca.get(i))){
-                    listaFiltrosGeral.add(listaFiltrosMarca.get(i));
-                }
-            }
+        else if(cb_marca.getSelectedItem().equals("") && !cb_categoria.getSelectedItem().equals("")) {
+            listaFiltrosGeral = listaFiltrosCat;
             
         }
         
+        else if(cb_categoria.getSelectedItem().equals("") && cb_marca.getSelectedItem().equals("")){
+            listaFiltrosGeral = Tela_cadastroProdutos.listaProdutos;
+           
+        }
+        
+        else {
+        
+            for(int i=0; i<listaFiltrosCat.size(); i++){
+                if(listaFiltrosMarca.contains(listaFiltrosCat.get(i))){
+                    listaFiltrosGeral.add(listaFiltrosCat.get(i));
+                }
+            }
+        }
         
         modelProdutos.removeAllElements();
         for(int i=0; i<listaFiltrosGeral.size(); i++){
             modelProdutos.addElement(listaFiltrosGeral.get(i).getNome());
         }
+        }
+        
+        catch(Exception e){
+            
+        }
     }
     
     public void limparTxArea(){
         tx_infosProduto.setText("");
+    }
+    
+    public void limparItensAdicionados(){
+          
+            for(int i=0; i<Tela_Inicial.listaAdicionados.size(); i++){
+                if(modelProdutos.contains(i)){
+                    modelProdutos.removeElement(Tela_Inicial.listaAdicionados.get(i));
+                }
+            }
+        
     }
     
     
@@ -142,9 +141,7 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         cb_categoria = new javax.swing.JComboBox<>();
         cb_marca = new javax.swing.JComboBox<>();
-        cb_fornecedor = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         bt_irCarrinho = new javax.swing.JButton();
@@ -220,26 +217,10 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
             }
         });
 
-        cb_fornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        cb_fornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cb_fornecedorMouseClicked(evt);
-            }
-        });
-        cb_fornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cb_fornecedorActionPerformed(evt);
-            }
-        });
-
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 102, 0));
         jLabel4.setText("Filtrar:");
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel6.setText("Fornecedor");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 102, 0));
@@ -309,7 +290,7 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(bt_addCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(12, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -333,20 +314,13 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(36, 36, 36)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel7)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(46, 46, 46))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(cb_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(cb_fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)))))
+                                            .addComponent(jLabel7)
+                                            .addComponent(cb_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(60, 60, 60)))))
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10))))
         );
@@ -364,13 +338,11 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6))
+                            .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cb_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cb_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cb_fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cb_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -404,16 +376,45 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     }//GEN-LAST:event_bt_addCarrinhoActionPerformed
 
     private void cb_categoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_categoriaActionPerformed
-        // TODO add your handling code here:
+        if(!cb_categoria.getSelectedItem().toString().equals("")){
+            System.out.println("aaa");
+            listaFiltrosCat = new ArrayList<>();
+            
+            for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
+                if(Tela_cadastroProdutos.listaProdutos.get(i).getCategoria().equals(cb_categoria.getSelectedItem().toString())){
+                    listaFiltrosCat.add(Tela_cadastroProdutos.listaProdutos.get(i));
+                    
+                }
+            }
+        }
+            
+        
+        else{
+            listaFiltrosCat = Tela_cadastroProdutos.listaProdutos;
+        }
+        
+        FiltrarLista();
+        
     }//GEN-LAST:event_cb_categoriaActionPerformed
 
     private void cb_marcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_marcaActionPerformed
-        // TODO add your handling code here:
+       if(!cb_marca.getSelectedItem().toString().equals("")){
+        
+        listaFiltrosMarca = new ArrayList<>();
+        if(!cb_marca.getSelectedItem().toString().equals(null)){
+            for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
+                if(Tela_cadastroProdutos.listaProdutos.get(i).getMarca().equals(cb_marca.getSelectedItem().toString())){
+                        listaFiltrosMarca.add(Tela_cadastroProdutos.listaProdutos.get(i));
+                }
+            }
+        }
+        
+        else{
+            listaFiltrosMarca = Tela_cadastroProdutos.listaProdutos;
+        }
+        FiltrarLista();
+        }
     }//GEN-LAST:event_cb_marcaActionPerformed
-
-    private void cb_fornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_fornecedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cb_fornecedorActionPerformed
 
     private void bt_irCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_irCarrinhoActionPerformed
         // TODO add your handling code here:
@@ -433,67 +434,17 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     }//GEN-LAST:event_jList_produtosMouseClicked
 
     private void cb_categoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_categoriaMouseClicked
-        if(!cb_categoria.getSelectedItem().equals("")){
         
-        listaFiltrosCat = new ArrayList<>();
-        if(!cb_categoria.getSelectedItem().toString().equals("")){
-            for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
-                if(Tela_cadastroProdutos.listaProdutos.get(i).getCategoria().equals(cb_categoria.getSelectedItem().toString())){
-                        listaFiltrosCat.add(Tela_cadastroProdutos.listaProdutos.get(i));
-                }
-            }
-        }
-        
-        else{
-            listaFiltrosCat = Tela_cadastroProdutos.listaProdutos;
-        }
-        
-        FiltrarLista();
-        }
     }//GEN-LAST:event_cb_categoriaMouseClicked
 
     private void cb_marcaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_marcaMouseClicked
-        if(!cb_marca.getSelectedItem().equals("")){
-        
-        listaFiltrosMarca = new ArrayList<>();
-        if(!cb_marca.getSelectedItem().toString().equals(null)){
-            for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
-                if(Tela_cadastroProdutos.listaProdutos.get(i).getMarca().equals(cb_marca.getSelectedItem().toString())){
-                        listaFiltrosMarca.add(Tela_cadastroProdutos.listaProdutos.get(i));
-                }
-            }
-        }
-        
-        else{
-            listaFiltrosMarca = Tela_cadastroProdutos.listaProdutos;
-        }
-        FiltrarLista();
-        }
+       
     }//GEN-LAST:event_cb_marcaMouseClicked
-
-    private void cb_fornecedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_fornecedorMouseClicked
-        if(!cb_fornecedor.getSelectedItem().equals("")){
-        
-        listaFiltrosFor = new ArrayList<>();
-        if(!cb_fornecedor.getSelectedItem().toString().equals(null)){
-                for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
-                    if(Tela_cadastroProdutos.listaProdutos.get(i).getFornecedor().equals(cb_fornecedor.getSelectedItem().toString())){
-                        listaFiltrosFor.add(Tela_cadastroProdutos.listaProdutos.get(i));
-                    }
-                }
-            }
-        
-        else{
-            listaFiltrosFor = Tela_cadastroProdutos.listaProdutos;
-        }
-        FiltrarLista();
-        }
-    }//GEN-LAST:event_cb_fornecedorMouseClicked
 
     private void bt_addCarrinhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_addCarrinhoMouseClicked
                 
         
-            Janela.t13 = new Tela_quantidadeProduto(jList_produtos.getSelectedValue());
+            Janela.t13 = new Tela_quantidadeProduto(jList_produtos.getSelectedValue(), clienteLogado);
             Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
             janela.getContentPane().remove(Janela.t11);
             janela.add(Janela.t13, BorderLayout.CENTER);
@@ -523,7 +474,6 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     private javax.swing.JButton bt_irCarrinho;
     private javax.swing.JButton bt_voltar;
     private javax.swing.JComboBox<String> cb_categoria;
-    private javax.swing.JComboBox<String> cb_fornecedor;
     private javax.swing.JComboBox<String> cb_marca;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -531,7 +481,6 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JList<String> jList_produtos;

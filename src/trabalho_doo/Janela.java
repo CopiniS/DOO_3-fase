@@ -32,7 +32,7 @@ public class Janela extends javax.swing.JFrame {
         t9 = new Tela_editarProdutos(null);
         t10 = new Tela_alteracaoEstoque(null);
         t11 = new Tela_listaProdutos_cliente(null);
-        t13 = new Tela_quantidadeProduto(null);
+        t13 = new Tela_quantidadeProduto(null, null);
         t12 = new Tela_carrinho(null);
         
         

@@ -6,14 +6,16 @@ import java.util.ArrayList;
 import javax.swing.SwingUtilities;
 
 public class Tela_quantidadeProduto extends javax.swing.JPanel {
-    
     String produtoTxt;
+    Cliente clienteLogado;
     
-    public Tela_quantidadeProduto(String produto) {
+    public Tela_quantidadeProduto(String produto, Cliente clienteLogado) {
         initComponents();
         this.produtoTxt = produto;
         tx_preco.setText(achaProduto(produto).getPrecoVenda());
         tx_preco.setEnabled(false);
+        this.clienteLogado = clienteLogado;
+        lb_produto.setText(produto);
         
     }
     
@@ -119,9 +121,10 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
 
     private void bt_salvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_salvarMouseClicked
         
-        Tela_listaProdutos_cliente.listaAdicionados.add(achaProduto(produtoTxt));
+        Tela_Inicial.listaAdicionados.add(achaProduto(produtoTxt));
         achaProduto(produtoTxt).setQuantidade(Integer.parseInt(tx_quantidade.getText()));
         
+        Janela.t11 = new Tela_listaProdutos_cliente(clienteLogado);
         Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
         janela.getContentPane().remove(Janela.t13);
         janela.add(Janela.t11, BorderLayout.CENTER);

@@ -2,12 +2,15 @@
 package trabalho_doo;
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
 import javax.swing.SwingUtilities;
 
 public class Tela_Inicial extends javax.swing.JPanel {
-
+    static ArrayList<Produto> listaAdicionados;
+    
     public Tela_Inicial() {
         initComponents();
+        listaAdicionados = new ArrayList();
     }
 
     @SuppressWarnings("unchecked")
