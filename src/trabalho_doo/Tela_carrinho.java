@@ -157,22 +157,23 @@ public class Tela_carrinho extends javax.swing.JPanel {
     }//GEN-LAST:event_bt_notaFiscalMouseClicked
 
     private void bt_removerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_removerMouseClicked
-        if(tb_adicionados.getSelectedRow() == -1){
-            JOptionPane.showMessageDialog(null, "Nenhum produto selecionado", "ERRO", JOptionPane.ERROR_MESSAGE);
-        }
-        
-        else{
-            model.removeRow(tb_adicionados.getSelectedRow());
-            System.out.println(tb_adicionados.getSelectedRow());
-            Tela_listaProdutos_cliente.listaAdicionados.remove(tb_adicionados.getSelectedRow());
+        if(tb_adicionados.getSelectedRow() != -1){
             
-            if(Tela_cadastro_admi.listaAdministradores.isEmpty()){
+            Tela_listaProdutos_cliente.listaAdicionados.remove(tb_adicionados.getSelectedRow());
+            model.removeRow(tb_adicionados.getSelectedRow());
+            calculaValorTotal();
+            
+            if(Tela_listaProdutos_cliente.listaAdicionados.isEmpty()){
                 Janela.t11 = new Tela_listaProdutos_cliente(null);
                 Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
                 janela.getContentPane().remove(Janela.t12);
                 janela.add(Janela.t11, BorderLayout.CENTER);
                 janela.pack();
             }
+        }
+        
+        else{
+            JOptionPane.showMessageDialog(null, "Nenhum produto selecionado", "ERRO", JOptionPane.ERROR_MESSAGE);
         }
         
         
