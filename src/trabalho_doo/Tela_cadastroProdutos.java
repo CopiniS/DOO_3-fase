@@ -2,6 +2,7 @@
 package trabalho_doo;
 
 import java.awt.BorderLayout;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -369,23 +370,44 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
     }//GEN-LAST:event_bt_voltarMouseClicked
 
     private void tx_precoCustoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tx_precoCustoKeyTyped
-        String caracteres="0987654321";
-        if(!caracteres.contains(evt.getKeyChar()+"")){
-            evt.consume();
+        char c = evt.getKeyChar();
+        String text = tx_precoCusto.getText();
+        
+        if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+            if(c == ('.') && !tx_precoCusto.getText().isBlank() && !text.contains(".")){
+                
+            }
+            else{
+                evt.consume();
+            }
         }
     }//GEN-LAST:event_tx_precoCustoKeyTyped
 
     private void tx_precoVendaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tx_precoVendaKeyTyped
-        String caracteres="0987654321";
-        if(!caracteres.contains(evt.getKeyChar()+"")){
-            evt.consume();
+        char c = evt.getKeyChar();
+        String text = tx_precoVenda.getText();
+        
+        if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+            if(c == ('.') && !tx_precoVenda.getText().isBlank() && !text.contains(".")){
+                
+            }
+            else{
+                evt.consume();
+            }
         }
     }//GEN-LAST:event_tx_precoVendaKeyTyped
 
     private void tx_estoqueKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tx_estoqueKeyTyped
-        String caracteres="0987654321";
-        if(!caracteres.contains(evt.getKeyChar()+"")){
-            evt.consume();
+        char c = evt.getKeyChar();
+        String text = tx_estoque.getText();
+        
+        if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+            if(c == ('.') && !tx_estoque.getText().isBlank() && !text.contains(".")){
+                
+            }
+            else{
+                evt.consume();
+            }
         }
     }//GEN-LAST:event_tx_estoqueKeyTyped
 

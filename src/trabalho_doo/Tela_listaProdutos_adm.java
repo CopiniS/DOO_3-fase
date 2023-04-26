@@ -91,6 +91,7 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
         bt_cadastrarProdutos = new javax.swing.JButton();
         bt_remover = new javax.swing.JButton();
         bt_voltaLogin = new javax.swing.JButton();
+        bt_vizauliza = new javax.swing.JButton();
         lb_back = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -226,7 +227,7 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
             }
         });
         add(bt_estoque);
-        bt_estoque.setBounds(810, 620, 200, 30);
+        bt_estoque.setBounds(810, 650, 200, 30);
 
         bt_imprimirCatalogo.setBackground(new java.awt.Color(255, 153, 102));
         bt_imprimirCatalogo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -262,7 +263,7 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
             }
         });
         add(bt_remover);
-        bt_remover.setBounds(810, 460, 200, 30);
+        bt_remover.setBounds(810, 420, 200, 30);
 
         bt_voltaLogin.setBackground(new java.awt.Color(255, 153, 102));
         bt_voltaLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -279,11 +280,23 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
             }
         });
         add(bt_voltaLogin);
-        bt_voltaLogin.setBounds(810, 770, 200, 30);
+        bt_voltaLogin.setBounds(810, 760, 200, 30);
+
+        bt_vizauliza.setBackground(new java.awt.Color(255, 153, 102));
+        bt_vizauliza.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt_vizauliza.setForeground(new java.awt.Color(0, 0, 0));
+        bt_vizauliza.setText("Vizualizar produto");
+        bt_vizauliza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_vizaulizaMouseClicked(evt);
+            }
+        });
+        add(bt_vizauliza);
+        bt_vizauliza.setBounds(810, 530, 200, 30);
 
         lb_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/1050-851.jpg"))); // NOI18N
         add(lb_back);
-        lb_back.setBounds(0, 0, 1050, 850);
+        lb_back.setBounds(0, 10, 1050, 850);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_estoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_estoqueActionPerformed
@@ -358,7 +371,6 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Selecione o produto que deseja editar", "ERRO", JOptionPane.ERROR_MESSAGE);
         }
         else{
-        
         Janela.t10 = new Tela_alteracaoEstoque(jList_produto.getSelectedValue());
         Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
         janela.getContentPane().remove(Janela.t6);
@@ -376,8 +388,21 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
     }//GEN-LAST:event_bt_voltaLoginMouseClicked
 
     private void bt_voltaLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltaLoginActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_bt_voltaLoginActionPerformed
+
+    private void bt_vizaulizaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_vizaulizaMouseClicked
+        if(jList_produto.isSelectionEmpty()){
+        JOptionPane.showMessageDialog(null, "Selecione o produto que deseja vizualizar", "ERRO", JOptionPane.ERROR_MESSAGE);
+       }
+       else{
+        Janela.t14 = new Tela_vizualizacao(jList_produto.getSelectedValue());
+        Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
+        janela.getContentPane().remove(Janela.t6);
+        janela.add(Janela.t14, BorderLayout.CENTER);
+        janela.pack();
+       }
+    }//GEN-LAST:event_bt_vizaulizaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -386,6 +411,7 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
     private javax.swing.JButton bt_estoque;
     private javax.swing.JButton bt_imprimirCatalogo;
     private javax.swing.JButton bt_remover;
+    private javax.swing.JButton bt_vizauliza;
     private javax.swing.JButton bt_voltaLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

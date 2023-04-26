@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
@@ -380,12 +381,17 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     }//GEN-LAST:event_cb_marcaMouseClicked
 
     private void bt_addCarrinhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_addCarrinhoMouseClicked
-              
-            Janela.t13 = new Tela_quantidadeProduto(jList_produtos.getSelectedValue(), clienteLogado);
-            Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
-            janela.getContentPane().remove(Janela.t11);
-            janela.add(Janela.t13, BorderLayout.CENTER);
-            janela.pack();
+            if(jList_produtos.isSelectionEmpty()) {
+                JOptionPane.showMessageDialog(null, "Selecione algum produto", "ERRO", JOptionPane.ERROR_MESSAGE);
+            } 
+            
+            else{
+                Janela.t13 = new Tela_quantidadeProduto(jList_produtos.getSelectedValue(), clienteLogado);
+                Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
+                janela.getContentPane().remove(Janela.t11);
+                janela.add(Janela.t13, BorderLayout.CENTER);
+                janela.pack();
+            }
     }//GEN-LAST:event_bt_addCarrinhoMouseClicked
 
     private void bt_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_voltarMouseClicked

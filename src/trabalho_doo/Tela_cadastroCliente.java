@@ -143,6 +143,11 @@ public class Tela_cadastroCliente extends javax.swing.JPanel {
         tx_nome.setBounds(53, 99, 283, 22);
 
         tx_cpf.setBackground(new java.awt.Color(255, 255, 255));
+        tx_cpf.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tx_cpfKeyTyped(evt);
+            }
+        });
         add(tx_cpf);
         tx_cpf.setBounds(53, 166, 209, 22);
 
@@ -242,6 +247,13 @@ public class Tela_cadastroCliente extends javax.swing.JPanel {
     private void bt_telaLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_telaLoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_telaLoginActionPerformed
+
+    private void tx_cpfKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tx_cpfKeyTyped
+        String caracteres="0987654321";
+        if(!caracteres.contains(evt.getKeyChar()+"")){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tx_cpfKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

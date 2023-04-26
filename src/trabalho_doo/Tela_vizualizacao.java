@@ -2,17 +2,17 @@
 package trabalho_doo;
 
 import java.awt.BorderLayout;
-import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
-public class Tela_editarProdutos extends javax.swing.JPanel {
+public class Tela_vizualizacao extends javax.swing.JPanel {
     String produto;
-    public Tela_editarProdutos(String produto) {
+    public Tela_vizualizacao(String produto) {
         initComponents();
         this.produto = produto;
         iniciarCaixasTextos();  
         lb_nome.setText(produto);
+        desabilita();
     }
     
     public void iniciarCaixasTextos(){
@@ -26,19 +26,16 @@ public class Tela_editarProdutos extends javax.swing.JPanel {
             }
         }
      }
-    public void editaProduto(){
-        for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
-            if(Tela_cadastroProdutos.listaProdutos.get(i).getNome().equals(produto)){
-                Tela_cadastroProdutos.listaProdutos.get(i).setCategoria(tx_categoria.getText());
-                Tela_cadastroProdutos.listaProdutos.get(i).setPrecoCusto(tx_precoCusto.getText());
-                Tela_cadastroProdutos.listaProdutos.get(i).setPrecoVenda(tx_precoVenda.getText());
-                Tela_cadastroProdutos.listaProdutos.get(i).setMarca(tx_marca.getText());
-                Tela_cadastroProdutos.listaProdutos.get(i).setEstoque(tx_estoque.getText());
-                
-            }
-        }
-
+    
+    public void desabilita(){
+        tx_categoria.setEditable(false);
+        tx_precoCusto.setEditable(false);
+        tx_precoVenda.setEditable(false);
+        tx_marca.setEditable(false);
+        tx_estoque.setEditable(false);
+        
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -54,7 +51,6 @@ public class Tela_editarProdutos extends javax.swing.JPanel {
         bt_voltar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         lb_nome = new javax.swing.JLabel();
-        bt_salvar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         tx_precoCusto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -150,18 +146,6 @@ public class Tela_editarProdutos extends javax.swing.JPanel {
         add(lb_nome);
         lb_nome.setBounds(140, 10, 230, 32);
 
-        bt_salvar.setBackground(new java.awt.Color(255, 153, 102));
-        bt_salvar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        bt_salvar.setForeground(new java.awt.Color(0, 0, 0));
-        bt_salvar.setText("Salvar");
-        bt_salvar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_salvarMouseClicked(evt);
-            }
-        });
-        add(bt_salvar);
-        bt_salvar.setBounds(270, 430, 113, 34);
-
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 153, 51));
         jLabel4.setText("Preço de custo:");
@@ -183,67 +167,25 @@ public class Tela_editarProdutos extends javax.swing.JPanel {
         add(jLabel3);
         jLabel3.setBounds(-20, 0, 430, 520);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bt_salvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_salvarMouseClicked
-        if(tx_marca.getText().isBlank() || tx_precoCusto.getText().isBlank() || tx_precoVenda.getText().isBlank() || 
-        tx_estoque.getText().isBlank()){
-            JOptionPane.showMessageDialog(null, "Digite todos os campos obrigatórios", 
-                    "ERRO", JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-        editaProduto();
-        JOptionPane.showMessageDialog(null, "Produto alterado com sucesso", "Tudo certo", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }//GEN-LAST:event_bt_salvarMouseClicked
     
     private void bt_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_voltarMouseClicked
         Janela.t6 = new Tela_listaProdutos_adm();
         Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
-        janela.getContentPane().remove(Janela.t9);
+        janela.getContentPane().remove(Janela.t14);
         janela.add(Janela.t6, BorderLayout.CENTER);
         janela.pack();
     }//GEN-LAST:event_bt_voltarMouseClicked
 
     private void tx_precoCustoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tx_precoCustoKeyTyped
-        char c = evt.getKeyChar();
-        String text = tx_precoCusto.getText();
         
-        if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
-            if(c == ('.') && !tx_precoCusto.getText().isBlank() && !text.contains(".")){
-                
-            }
-            else{
-                evt.consume();
-            }
-        }
     }//GEN-LAST:event_tx_precoCustoKeyTyped
 
     private void tx_precoVendaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tx_precoVendaKeyTyped
-        char c = evt.getKeyChar();
-        String text = tx_precoVenda.getText();
         
-        if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
-            if(c == ('.') && !tx_precoVenda.getText().isBlank() && !text.contains(".")){
-                
-            }
-            else{
-                evt.consume();
-            }
-        }
     }//GEN-LAST:event_tx_precoVendaKeyTyped
 
     private void tx_estoqueKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tx_estoqueKeyTyped
-       char c = evt.getKeyChar();
-        String text = tx_estoque.getText();
         
-        if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
-            if(c == ('.') && !tx_estoque.getText().isBlank() && !text.contains(".")){
-                
-            }
-            else{
-                evt.consume();
-            }
-        }
     }//GEN-LAST:event_tx_estoqueKeyTyped
 
     private void tx_estoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_estoqueActionPerformed
@@ -252,7 +194,6 @@ public class Tela_editarProdutos extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bt_salvar;
     private javax.swing.JButton bt_voltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

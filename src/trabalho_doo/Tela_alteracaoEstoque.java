@@ -7,6 +7,7 @@ import javax.swing.SwingUtilities;
 
 public class Tela_alteracaoEstoque extends javax.swing.JPanel {
     String produto;
+    boolean foiAlterado;
         
     public Tela_alteracaoEstoque(String produto) {
         initComponents();
@@ -15,6 +16,7 @@ public class Tela_alteracaoEstoque extends javax.swing.JPanel {
         lb_produto.setText(produto);
         acharEstoqueAtual(produto);
         tx_estoqueAtual.setEditable(false);
+        this.foiAlterado = true;
         
     }
     
@@ -32,25 +34,28 @@ public class Tela_alteracaoEstoque extends javax.swing.JPanel {
             for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
                 if(Tela_cadastroProdutos.listaProdutos.get(i).getNome().equals(produto)){
                     Tela_cadastroProdutos.listaProdutos.get(i).setEstoque(String.valueOf(valorAtualizado));
+                    foiAlterado = true;
                 }
             }
         }     
         
         else if(rb_saida.isSelected()){
             
-            if(Double.parseDouble(tx_valor.getText()) < Double.parseDouble(tx_estoqueAtual.getText())){
+            if(Double.parseDouble(tx_valor.getText()) <= Double.parseDouble(tx_estoqueAtual.getText())){
                 double valorAtualizado = Double.parseDouble(tx_estoqueAtual.getText()) - Double.parseDouble(tx_valor.getText());
                 for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
                     if(Tela_cadastroProdutos.listaProdutos.get(i).getNome().equals(produto)){
                         Tela_cadastroProdutos.listaProdutos.get(i).setEstoque(String.valueOf(valorAtualizado));
                         tx_estoqueAtual.setText(String.valueOf(valorAtualizado));
                         tx_valor.setText("");
+                        foiAlterado = true;
                     }   
                 }
             }
             
             else{
                 JOptionPane.showMessageDialog(null, "O estoque atual é menor do que a saída", "ERRO", JOptionPane.ERROR_MESSAGE);
+                foiAlterado = false;
             }
         }
         
@@ -60,6 +65,7 @@ public class Tela_alteracaoEstoque extends javax.swing.JPanel {
                     Tela_cadastroProdutos.listaProdutos.get(i).setEstoque(tx_valor.getText());
                     tx_estoqueAtual.setText(tx_valor.getText());
                     tx_valor.setText("");
+                    foiAlterado = true;
                 }
             }
         }
@@ -99,7 +105,7 @@ public class Tela_alteracaoEstoque extends javax.swing.JPanel {
         lb_produto.setForeground(new java.awt.Color(255, 153, 0));
         lb_produto.setText("<produto>");
         add(lb_produto);
-        lb_produto.setBounds(150, 10, 141, 32);
+        lb_produto.setBounds(140, 10, 210, 32);
 
         buttonGroup1.add(rb_entrada);
         rb_entrada.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -228,7 +234,10 @@ public class Tela_alteracaoEstoque extends javax.swing.JPanel {
         else if(tx_valor.getText().isBlank()){
             JOptionPane.showMessageDialog(null, "digite um valor para alterar o estoque", "ERRO", JOptionPane.ERROR_MESSAGE);
         }
-        else{
+        
+        
+        else if(foiAlterado != false){
+            System.out.println(foiAlterado);
             alterarEstoque(produto);
             JOptionPane.showMessageDialog(null, "Estoque alterado com sucesso", "Tudo certo", JOptionPane.INFORMATION_MESSAGE);
         }
