@@ -44,7 +44,7 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
         else{
             listaOrdenada.add(Tela_cadastroProdutos.listaProdutos.get(0));
             for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
-                for(int j=0; j<Tela_cadastroProdutos.listaProdutos.size(); i++){
+                for(int j=0; j<Tela_cadastroProdutos.listaProdutos.size(); j++){
                     if(Tela_cadastroProdutos.listaProdutos.get(i).getMarca().equalsIgnoreCase(Tela_cadastroProdutos.listaProdutos.get(j).getMarca())
                         && !listaOrdenada.contains(Tela_cadastroProdutos.listaProdutos.get(j))){
                         listaOrdenada.add(Tela_cadastroProdutos.listaProdutos.get(j));
@@ -127,6 +127,7 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
         rb_categoria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rb_categoria.setForeground(new java.awt.Color(255, 255, 255));
         rb_categoria.setText("Categoria");
+        rb_categoria.setOpaque(false);
         add(rb_categoria);
         rb_categoria.setBounds(47, 143, 91, 29);
 
@@ -140,6 +141,7 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
         rb_forndecedor.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rb_forndecedor.setForeground(new java.awt.Color(255, 255, 255));
         rb_forndecedor.setText("Fornecedor");
+        rb_forndecedor.setOpaque(false);
         add(rb_forndecedor);
         rb_forndecedor.setBounds(47, 178, 91, 29);
 
@@ -147,6 +149,7 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
         rb_marca.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rb_marca.setForeground(new java.awt.Color(255, 255, 255));
         rb_marca.setText("Marca");
+        rb_marca.setOpaque(false);
         add(rb_marca);
         rb_marca.setBounds(47, 212, 91, 29);
 
@@ -154,6 +157,7 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
         rb_somenteVenda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rb_somenteVenda.setForeground(new java.awt.Color(255, 255, 255));
         rb_somenteVenda.setText("Mostrar somente de venda");
+        rb_somenteVenda.setOpaque(false);
         add(rb_somenteVenda);
         rb_somenteVenda.setBounds(210, 140, 210, 25);
 
@@ -167,6 +171,7 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
         rb_custoVenda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rb_custoVenda.setForeground(new java.awt.Color(255, 255, 255));
         rb_custoVenda.setText("Mostrar preço de custo e de venda");
+        rb_custoVenda.setOpaque(false);
         rb_custoVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rb_custoVendaActionPerformed(evt);
@@ -179,6 +184,7 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
         rb_naoPrecos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rb_naoPrecos.setForeground(new java.awt.Color(255, 255, 255));
         rb_naoPrecos.setText("Não exibir preços");
+        rb_naoPrecos.setOpaque(false);
         add(rb_naoPrecos);
         rb_naoPrecos.setBounds(210, 220, 130, 21);
 

@@ -4,6 +4,7 @@ package trabalho_doo;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 public class Tela_quantidadeProduto extends javax.swing.JPanel {
@@ -14,8 +15,8 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
     public Tela_quantidadeProduto(String produto, Cliente clienteLogado) {
         initComponents();
         this.produtoTxt = produto;
-        tx_preco.setText(achaProduto(produto).getPrecoVenda());
-        tx_preco.setEditable(false);
+        tx_estoque.setText(achaProduto(produto).getEstoque());
+        tx_estoque.setEditable(false);
         this.clienteLogado = clienteLogado;
         lb_produto.setText(produto);
         tx_quantidade.setOpaque(false);
@@ -30,6 +31,19 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
         }
         return p1;
     }
+    
+    public void alteraEstoque(){
+            Produto p1 = new Produto();
+            p1 = achaProduto(produtoTxt);
+            if(Double.parseDouble(p1.getEstoque()) > Double.parseDouble(tx_quantidade.getText())){
+                double estoqueAtual = Double.parseDouble(p1.getEstoque()) - Double.parseDouble(tx_quantidade.getText());
+                p1.setEstoque(String.valueOf(estoqueAtual));
+            }
+            
+            else{
+                 JOptionPane.showMessageDialog(null, "Quantidade insuficeiente no estoque", "ERRO", JOptionPane.ERROR_MESSAGE);
+            }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -38,8 +52,8 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
         lb_produto = new javax.swing.JLabel();
         tx_quantidade = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        tx_preco = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        tx_estoque = new javax.swing.JTextField();
+        lb_estoque = new javax.swing.JLabel();
         bt_salvar = new javax.swing.JButton();
         bt_voltar = new javax.swing.JButton();
         lb_back = new javax.swing.JLabel();
@@ -69,19 +83,19 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
         add(jLabel1);
         jLabel1.setBounds(15, 88, 111, 25);
 
-        tx_preco.setBackground(new java.awt.Color(255, 255, 255));
-        tx_preco.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        tx_preco.setForeground(new java.awt.Color(255, 255, 255));
-        tx_preco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tx_preco.setOpaque(false);
-        add(tx_preco);
-        tx_preco.setBounds(376, 88, 112, 25);
+        tx_estoque.setBackground(new java.awt.Color(255, 255, 255));
+        tx_estoque.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tx_estoque.setForeground(new java.awt.Color(255, 255, 255));
+        tx_estoque.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tx_estoque.setOpaque(false);
+        add(tx_estoque);
+        tx_estoque.setBounds(390, 90, 112, 25);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 153, 51));
-        jLabel2.setText("Preço:");
-        add(jLabel2);
-        jLabel2.setBounds(310, 88, 66, 25);
+        lb_estoque.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lb_estoque.setForeground(new java.awt.Color(255, 153, 51));
+        lb_estoque.setText("Estoque:");
+        add(lb_estoque);
+        lb_estoque.setBounds(310, 88, 80, 25);
 
         bt_salvar.setBackground(new java.awt.Color(255, 153, 102));
         bt_salvar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -118,11 +132,13 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
        
         if(Tela_Inicial.listaAdicionados.contains(achaProduto(produtoTxt))){
             p1.setQuantidade(p1.getQuantidade() + Integer.parseInt(tx_quantidade.getText()));
+            alteraEstoque();
         }
         
         else{
-        Tela_Inicial.listaAdicionados.add(achaProduto(produtoTxt));
-        p1.setQuantidade(Integer.parseInt(tx_quantidade.getText()));
+            Tela_Inicial.listaAdicionados.add(achaProduto(produtoTxt));
+            p1.setQuantidade(Integer.parseInt(tx_quantidade.getText()));
+            alteraEstoque();
         }
         
         Janela.t11 = new Tela_listaProdutos_cliente(clienteLogado);
@@ -144,10 +160,10 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
     private javax.swing.JButton bt_salvar;
     private javax.swing.JButton bt_voltar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lb_back;
+    private javax.swing.JLabel lb_estoque;
     private javax.swing.JLabel lb_produto;
-    private javax.swing.JTextField tx_preco;
+    private javax.swing.JTextField tx_estoque;
     private javax.swing.JTextField tx_quantidade;
     // End of variables declaration//GEN-END:variables
 }

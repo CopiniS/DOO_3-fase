@@ -132,12 +132,14 @@ public class Tela_cadastro_admi extends javax.swing.JPanel {
         jLabel4.setBounds(60, 140, 58, 27);
 
         tx_nome.setBackground(new java.awt.Color(255, 255, 255));
-        tx_nome.setForeground(new java.awt.Color(0, 0, 0));
+        tx_nome.setForeground(new java.awt.Color(255, 255, 255));
+        tx_nome.setOpaque(false);
         add(tx_nome);
         tx_nome.setBounds(60, 100, 280, 22);
 
         tx_cargo.setBackground(new java.awt.Color(255, 255, 255));
-        tx_cargo.setForeground(new java.awt.Color(0, 0, 0));
+        tx_cargo.setForeground(new java.awt.Color(255, 255, 255));
+        tx_cargo.setOpaque(false);
         tx_cargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tx_cargoActionPerformed(evt);
@@ -167,7 +169,8 @@ public class Tela_cadastro_admi extends javax.swing.JPanel {
         jLabel9.setBounds(500, 0, 94, 89);
 
         tx_usuario.setBackground(new java.awt.Color(255, 255, 255));
-        tx_usuario.setForeground(new java.awt.Color(0, 0, 0));
+        tx_usuario.setForeground(new java.awt.Color(255, 255, 255));
+        tx_usuario.setOpaque(false);
         add(tx_usuario);
         tx_usuario.setBounds(60, 240, 280, 22);
 
@@ -181,7 +184,7 @@ public class Tela_cadastro_admi extends javax.swing.JPanel {
             }
         });
         add(bt_salvar);
-        bt_salvar.setBounds(300, 460, 111, 39);
+        bt_salvar.setBounds(291, 460, 120, 39);
 
         bt_login.setBackground(new java.awt.Color(255, 153, 102));
         bt_login.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -198,13 +201,17 @@ public class Tela_cadastro_admi extends javax.swing.JPanel {
             }
         });
         add(bt_login);
-        bt_login.setBounds(20, 460, 111, 39);
+        bt_login.setBounds(20, 460, 120, 39);
 
         tx_senha.setBackground(new java.awt.Color(255, 255, 255));
+        tx_senha.setForeground(new java.awt.Color(255, 255, 255));
+        tx_senha.setOpaque(false);
         add(tx_senha);
         tx_senha.setBounds(60, 310, 280, 22);
 
         tx_repitaSenha.setBackground(new java.awt.Color(255, 255, 255));
+        tx_repitaSenha.setForeground(new java.awt.Color(255, 255, 255));
+        tx_repitaSenha.setOpaque(false);
         add(tx_repitaSenha);
         tx_repitaSenha.setBounds(60, 380, 280, 22);
 

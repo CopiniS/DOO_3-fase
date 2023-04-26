@@ -359,11 +359,16 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
 
     private void jList_produtosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList_produtosMouseClicked
         limparTxArea();
-        tx_infosProduto.append(Tela_cadastroProdutos.listaProdutos.get(jList_produtos.getSelectedIndex()).getCategoria() + "\n");
-        tx_infosProduto.append(Tela_cadastroProdutos.listaProdutos.get(jList_produtos.getSelectedIndex()).getFornecedor() + "\n");
-        tx_infosProduto.append(Tela_cadastroProdutos.listaProdutos.get(jList_produtos.getSelectedIndex()).getMarca() + "\n");
-        tx_infosProduto.append(Tela_cadastroProdutos.listaProdutos.get(jList_produtos.getSelectedIndex()).getEstoque() + "\n");
-        tx_infosProduto.append(Tela_cadastroProdutos.listaProdutos.get(jList_produtos.getSelectedIndex()).getPrecoVenda() + "\n");
+        
+        for(Produto produto : Tela_cadastroProdutos.listaProdutos){
+            if(produto.getNome().equals(jList_produtos.getSelectedValue())){
+                tx_infosProduto.append(produto.getCategoria() + "\n");
+                tx_infosProduto.append(produto.getFornecedor() + "\n");
+                tx_infosProduto.append(produto.getMarca() + "\n");
+                tx_infosProduto.append(produto.getEstoque() + "\n");
+                tx_infosProduto.append(produto.getPrecoVenda() + "\n");
+            }
+        }
     }//GEN-LAST:event_jList_produtosMouseClicked
 
     private void cb_categoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_categoriaMouseClicked

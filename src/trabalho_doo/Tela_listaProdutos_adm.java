@@ -3,6 +3,8 @@ package trabalho_doo;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
+import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -29,8 +31,6 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
         jList_estoque.setModel(modelEstoque);
         
         iniciarJlists();
-        jList_produto.setOpaque(false);
-        
     }
     
     public void iniciarJlists(){
@@ -108,7 +108,7 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
         jScrollPane2.setForeground(new java.awt.Color(255, 102, 0));
 
         jList_produto.setBackground(new java.awt.Color(255, 255, 255));
-        jList_produto.setForeground(new java.awt.Color(255, 255, 255));
+        jList_produto.setForeground(new java.awt.Color(0, 0, 0));
         jList_produto.setOpaque(false);
         jList_produto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -124,8 +124,9 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
         jScrollPane3.setForeground(new java.awt.Color(255, 102, 0));
 
         jList_estoque.setBackground(new java.awt.Color(255, 255, 255));
-        jList_estoque.setForeground(new java.awt.Color(255, 255, 255));
+        jList_estoque.setForeground(new java.awt.Color(0, 0, 0));
         jList_estoque.setOpaque(false);
+        jList_estoque.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jList_estoque.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jList_estoqueMouseClicked(evt);
@@ -140,7 +141,7 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
         jScrollPane4.setForeground(new java.awt.Color(255, 102, 0));
 
         jList_categoria.setBackground(new java.awt.Color(255, 255, 255));
-        jList_categoria.setForeground(new java.awt.Color(255, 255, 255));
+        jList_categoria.setForeground(new java.awt.Color(0, 0, 0));
         jList_categoria.setOpaque(false);
         jList_categoria.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -156,7 +157,7 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
         jScrollPane5.setForeground(new java.awt.Color(255, 102, 0));
 
         jList_lucro.setBackground(new java.awt.Color(255, 255, 255));
-        jList_lucro.setForeground(new java.awt.Color(255, 255, 255));
+        jList_lucro.setForeground(new java.awt.Color(0, 0, 0));
         jList_lucro.setOpaque(false);
         jList_lucro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

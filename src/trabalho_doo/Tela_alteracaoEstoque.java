@@ -37,13 +37,20 @@ public class Tela_alteracaoEstoque extends javax.swing.JPanel {
         }     
         
         else if(rb_saida.isSelected()){
-            double valorAtualizado = Double.parseDouble(tx_valor.getText()) - Double.parseDouble(tx_estoqueAtual.getText());
-            for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
-                if(Tela_cadastroProdutos.listaProdutos.get(i).getNome().equals(produto)){
-                    Tela_cadastroProdutos.listaProdutos.get(i).setEstoque(String.valueOf(valorAtualizado));
-                    tx_estoqueAtual.setText(String.valueOf(valorAtualizado));
-                    tx_valor.setText("");
+            
+            if(Double.parseDouble(tx_valor.getText()) < Double.parseDouble(tx_estoqueAtual.getText())){
+                double valorAtualizado = Double.parseDouble(tx_estoqueAtual.getText()) - Double.parseDouble(tx_valor.getText());
+                for(int i=0; i<Tela_cadastroProdutos.listaProdutos.size(); i++){
+                    if(Tela_cadastroProdutos.listaProdutos.get(i).getNome().equals(produto)){
+                        Tela_cadastroProdutos.listaProdutos.get(i).setEstoque(String.valueOf(valorAtualizado));
+                        tx_estoqueAtual.setText(String.valueOf(valorAtualizado));
+                        tx_valor.setText("");
+                    }   
                 }
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(null, "O estoque atual é menor do que a saída", "ERRO", JOptionPane.ERROR_MESSAGE);
             }
         }
         
@@ -98,6 +105,8 @@ public class Tela_alteracaoEstoque extends javax.swing.JPanel {
         rb_entrada.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rb_entrada.setForeground(new java.awt.Color(255, 255, 255));
         rb_entrada.setText("Entrada");
+        rb_entrada.setOpaque(false
+        );
         add(rb_entrada);
         rb_entrada.setBounds(32, 65, 90, 25);
 
@@ -105,6 +114,7 @@ public class Tela_alteracaoEstoque extends javax.swing.JPanel {
         rb_saida.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rb_saida.setForeground(new java.awt.Color(255, 255, 255));
         rb_saida.setText("Saída");
+        rb_saida.setOpaque(false);
         add(rb_saida);
         rb_saida.setBounds(196, 65, 62, 25);
 
@@ -112,6 +122,7 @@ public class Tela_alteracaoEstoque extends javax.swing.JPanel {
         rb_alteracao.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rb_alteracao.setForeground(new java.awt.Color(255, 255, 255));
         rb_alteracao.setText("Alteração");
+        rb_alteracao.setOpaque(false);
         rb_alteracao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rb_alteracaoActionPerformed(evt);
@@ -231,7 +242,8 @@ public class Tela_alteracaoEstoque extends javax.swing.JPanel {
     }//GEN-LAST:event_bt_salvarMouseClicked
 
     private void bt_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_voltarMouseClicked
-
+        
+        Janela.t6 = new Tela_listaProdutos_adm();
         Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
         janela.getContentPane().remove(Janela.t10);
         janela.add(Janela.t6, BorderLayout.CENTER);

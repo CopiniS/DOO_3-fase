@@ -354,7 +354,7 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
 
     private void bt_salvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_salvarMouseClicked
         if(tratarErro() == false){
-            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso", "Tudo filé", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso", "Tudo filé", JOptionPane.INFORMATION_MESSAGE);
             listaProdutos.add(criaProduto());
             limparTextos();
         }
