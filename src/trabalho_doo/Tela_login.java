@@ -2,6 +2,7 @@
 package trabalho_doo;
 
 import java.awt.BorderLayout;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -53,7 +54,8 @@ public class Tela_login extends javax.swing.JPanel {
             Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
             janela.getContentPane().remove(Janela.t2);
             janela.add(Janela.t11, BorderLayout.CENTER);
-            janela.pack();  
+            janela.pack();
+            
     }
     
     public void acessarListaProdutosAdministradores(){
@@ -83,62 +85,31 @@ public class Tela_login extends javax.swing.JPanel {
      @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel2 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lb_login = new javax.swing.JLabel();
         tx_usuario = new javax.swing.JTextField();
         bt_cadastrarUsuario = new javax.swing.JButton();
         bt_entrar = new javax.swing.JButton();
         cb_rememberMe = new javax.swing.JCheckBox();
         tx_senha = new javax.swing.JPasswordField();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lb_usuario = new javax.swing.JLabel();
+        lb_senha = new javax.swing.JLabel();
+        lb_back = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
         jPasswordField1.setText("jPasswordField1");
 
-        setLayout(new java.awt.GridBagLayout());
+        setPreferredSize(new java.awt.Dimension(480, 392));
+        setLayout(null);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 153, 51));
-        jLabel4.setText("Login");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 6;
-        gridBagConstraints.ipady = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(120, 0, 0, 0);
-        add(jLabel4, gridBagConstraints);
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 153, 51));
-        jLabel5.setText("Usuário:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 6;
-        gridBagConstraints.ipady = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 158, 0, 0);
-        add(jLabel5, gridBagConstraints);
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 153, 51));
-        jLabel6.setText("Senha:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 18;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(28, 158, 0, 0);
-        add(jLabel6, gridBagConstraints);
+        lb_login.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lb_login.setForeground(new java.awt.Color(255, 153, 51));
+        lb_login.setText("Login");
+        add(lb_login);
+        lb_login.setBounds(190, 30, 64, 32);
 
         tx_usuario.setBackground(new java.awt.Color(255, 255, 255));
         tx_usuario.setForeground(new java.awt.Color(0, 0, 0));
@@ -147,110 +118,60 @@ public class Tela_login extends javax.swing.JPanel {
                 tx_usuarioActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 116;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 10, 0, 0);
-        add(tx_usuario, gridBagConstraints);
+        add(tx_usuario);
+        tx_usuario.setBounds(140, 130, 180, 22);
 
-        bt_cadastrarUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        bt_cadastrarUsuario.setForeground(new java.awt.Color(255, 153, 51));
+        bt_cadastrarUsuario.setBackground(new java.awt.Color(255, 153, 102));
+        bt_cadastrarUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt_cadastrarUsuario.setForeground(new java.awt.Color(0, 0, 0));
         bt_cadastrarUsuario.setText("Cadastre-se");
         bt_cadastrarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_cadastrarUsuarioMouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 148, 0, 0);
-        add(bt_cadastrarUsuario, gridBagConstraints);
+        add(bt_cadastrarUsuario);
+        bt_cadastrarUsuario.setBounds(30, 320, 140, 40);
 
-        bt_entrar.setBackground(new java.awt.Color(255, 255, 255));
+        bt_entrar.setBackground(new java.awt.Color(255, 153, 102));
         bt_entrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        bt_entrar.setForeground(new java.awt.Color(255, 153, 51));
+        bt_entrar.setForeground(new java.awt.Color(0, 0, 0));
         bt_entrar.setText("Entrar");
         bt_entrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_entrarMouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 24;
-        gridBagConstraints.ipady = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
-        add(bt_entrar, gridBagConstraints);
+        add(bt_entrar);
+        bt_entrar.setBounds(310, 320, 140, 40);
 
         cb_rememberMe.setForeground(new java.awt.Color(255, 153, 51));
         cb_rememberMe.setText("Remember me");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 10, 0, 0);
-        add(cb_rememberMe, gridBagConstraints);
+        add(cb_rememberMe);
+        cb_rememberMe.setBounds(140, 250, 110, 20);
 
         tx_senha.setBackground(new java.awt.Color(255, 255, 255));
         tx_senha.setForeground(new java.awt.Color(0, 0, 0));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 116;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(38, 12, 0, 0);
-        add(tx_senha, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 9;
-        gridBagConstraints.ipadx = 308;
-        gridBagConstraints.ipady = 11;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(50, 128, 0, 0);
-        add(jSeparator1, gridBagConstraints);
+        add(tx_senha);
+        tx_senha.setBounds(140, 210, 180, 22);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Copini - PC\\OneDrive\\Documentos\\Caixa_Branca_login.png")); // NOI18N
-        jLabel3.setText("jLabel3");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 10;
-        gridBagConstraints.gridheight = 10;
-        gridBagConstraints.ipadx = -639;
-        gridBagConstraints.ipady = -593;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(110, 130, 0, 0);
-        add(jLabel3, gridBagConstraints);
+        lb_usuario.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lb_usuario.setForeground(new java.awt.Color(255, 153, 0));
+        lb_usuario.setText("Usuario:");
+        add(lb_usuario);
+        lb_usuario.setBounds(140, 100, 70, 22);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Copini - PC\\OneDrive\\Documentos\\login_laranja.png")); // NOI18N
-        jLabel1.setText("jLabel1");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 11;
-        gridBagConstraints.gridheight = 11;
-        gridBagConstraints.ipadx = -630;
-        gridBagConstraints.ipady = -191;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 4);
-        add(jLabel1, gridBagConstraints);
+        lb_senha.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lb_senha.setForeground(new java.awt.Color(255, 153, 0));
+        lb_senha.setText("Senha:");
+        add(lb_senha);
+        lb_senha.setBounds(140, 180, 60, 22);
+
+        lb_back.setForeground(new java.awt.Color(255, 153, 0));
+        lb_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fundo azul_480 - 392.jpg"))); // NOI18N
+        lb_back.setText("jLabel1");
+        add(lb_back);
+        lb_back.setBounds(0, 0, 480, 392);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tx_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_usuarioActionPerformed
@@ -292,14 +213,12 @@ public class Tela_login extends javax.swing.JPanel {
     private javax.swing.JButton bt_cadastrarUsuario;
     private javax.swing.JButton bt_entrar;
     private javax.swing.JCheckBox cb_rememberMe;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lb_back;
+    private javax.swing.JLabel lb_login;
+    private javax.swing.JLabel lb_senha;
+    private javax.swing.JLabel lb_usuario;
     private javax.swing.JPasswordField tx_senha;
     private javax.swing.JTextField tx_usuario;
     // End of variables declaration//GEN-END:variables

@@ -81,8 +81,8 @@ public class Tela_cadastroCliente extends javax.swing.JPanel {
     private void initComponents() {
 
         jPasswordField3 = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lb_title = new javax.swing.JLabel();
+        lb_nome = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -96,30 +96,42 @@ public class Tela_cadastroCliente extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         tx_usuario = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        lb_back = new javax.swing.JLabel();
 
         jPasswordField3.setText("jPasswordField3");
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(429, 518));
+        setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel1.setText("Cadastrar Cliente");
+        lb_title.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lb_title.setForeground(new java.awt.Color(255, 153, 51));
+        lb_title.setText("Cadastrar Cliente");
+        add(lb_title);
+        lb_title.setBounds(107, 21, 241, 27);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 102, 51));
-        jLabel2.setText("Nome: ");
+        lb_nome.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lb_nome.setForeground(new java.awt.Color(255, 153, 51));
+        lb_nome.setText("Nome: ");
+        add(lb_nome);
+        lb_nome.setBounds(53, 66, 70, 27);
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 153, 51));
         jLabel5.setText("CPF:");
+        add(jLabel5);
+        jLabel5.setBounds(53, 133, 40, 27);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 102, 51));
+        add(jLabel7);
+        jLabel7.setBounds(391, 337, 66, 27);
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 153, 51));
         jLabel8.setText("Repita a Senha:");
+        add(jLabel8);
+        jLabel8.setBounds(50, 340, 140, 27);
 
         tx_nome.setBackground(new java.awt.Color(255, 255, 255));
         tx_nome.addActionListener(new java.awt.event.ActionListener() {
@@ -127,22 +139,28 @@ public class Tela_cadastroCliente extends javax.swing.JPanel {
                 tx_nomeActionPerformed(evt);
             }
         });
+        add(tx_nome);
+        tx_nome.setBounds(53, 99, 283, 22);
 
         tx_cpf.setBackground(new java.awt.Color(255, 255, 255));
+        add(tx_cpf);
+        tx_cpf.setBounds(53, 166, 209, 22);
 
-        bt_salvar.setBackground(new java.awt.Color(255, 255, 255));
+        bt_salvar.setBackground(new java.awt.Color(255, 153, 102));
         bt_salvar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        bt_salvar.setForeground(new java.awt.Color(255, 102, 0));
+        bt_salvar.setForeground(new java.awt.Color(0, 0, 0));
         bt_salvar.setText("Salvar");
         bt_salvar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_salvarMouseClicked(evt);
             }
         });
+        add(bt_salvar);
+        bt_salvar.setBounds(240, 450, 150, 40);
 
-        bt_telaLogin.setBackground(new java.awt.Color(255, 255, 255));
-        bt_telaLogin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        bt_telaLogin.setForeground(new java.awt.Color(255, 102, 0));
+        bt_telaLogin.setBackground(new java.awt.Color(255, 153, 102));
+        bt_telaLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt_telaLogin.setForeground(new java.awt.Color(0, 0, 0));
         bt_telaLogin.setText("Tela de Login");
         bt_telaLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -154,18 +172,28 @@ public class Tela_cadastroCliente extends javax.swing.JPanel {
                 bt_telaLoginActionPerformed(evt);
             }
         });
+        add(bt_telaLogin);
+        bt_telaLogin.setBounds(40, 450, 150, 39);
 
         tx_senha.setBackground(new java.awt.Color(255, 255, 255));
+        add(tx_senha);
+        tx_senha.setBounds(53, 300, 209, 22);
 
         tx_repitaSenha.setBackground(new java.awt.Color(255, 255, 255));
+        add(tx_repitaSenha);
+        tx_repitaSenha.setBounds(53, 380, 209, 22);
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 153, 51));
         jLabel10.setText("Senha:");
+        add(jLabel10);
+        jLabel10.setBounds(50, 270, 66, 25);
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 153, 51));
         jLabel11.setText("Usuário:");
+        add(jLabel11);
+        jLabel11.setBounds(50, 200, 80, 27);
 
         tx_usuario.setBackground(new java.awt.Color(255, 255, 255));
         tx_usuario.addActionListener(new java.awt.event.ActionListener() {
@@ -173,87 +201,17 @@ public class Tela_cadastroCliente extends javax.swing.JPanel {
                 tx_usuarioActionPerformed(evt);
             }
         });
+        add(tx_usuario);
+        tx_usuario.setBounds(50, 230, 283, 22);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(bt_telaLogin)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bt_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(58, 58, 58))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(tx_nome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(tx_senha, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(tx_repitaSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE))
-                                    .addComponent(tx_usuario, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tx_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(24, 24, 24))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tx_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5)
-                        .addComponent(tx_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tx_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tx_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tx_repitaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bt_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bt_telaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20))
-        );
+        jLabel9.setPreferredSize(new java.awt.Dimension(426, 518));
+        add(jLabel9);
+        jLabel9.setBounds(305, 306, 94, 89);
+
+        lb_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fundo azul_429-518.jpg"))); // NOI18N
+        lb_back.setText("jLabel3");
+        add(lb_back);
+        lb_back.setBounds(0, 0, 430, 520);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tx_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_nomeActionPerformed
@@ -289,16 +247,16 @@ public class Tela_cadastroCliente extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_salvar;
     private javax.swing.JButton bt_telaLogin;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPasswordField jPasswordField3;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lb_back;
+    private javax.swing.JLabel lb_nome;
+    private javax.swing.JLabel lb_title;
     private javax.swing.JTextField tx_cpf;
     private javax.swing.JTextField tx_nome;
     private javax.swing.JPasswordField tx_repitaSenha;

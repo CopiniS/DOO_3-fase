@@ -18,7 +18,6 @@ public class Tela_cadastro extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel2 = new javax.swing.JLabel();
         bt_adm = new javax.swing.JButton();
@@ -26,27 +25,20 @@ public class Tela_cadastro extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         bt_cliente = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        lb_back = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(new java.awt.GridBagLayout());
+        setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 153, 51));
         jLabel2.setText("Cadastro");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 20;
-        gridBagConstraints.ipady = -25;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 58, 0, 0);
-        add(jLabel2, gridBagConstraints);
+        add(jLabel2);
+        jLabel2.setBounds(120, 30, 220, 39);
 
-        bt_adm.setBackground(new java.awt.Color(255, 102, 0));
+        bt_adm.setBackground(new java.awt.Color(255, 153, 102));
         bt_adm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        bt_adm.setForeground(new java.awt.Color(255, 255, 255));
+        bt_adm.setForeground(new java.awt.Color(0, 0, 0));
         bt_adm.setText("Adminitrador");
         bt_adm.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -58,46 +50,20 @@ public class Tela_cadastro extends javax.swing.JPanel {
                 bt_admActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 24;
-        gridBagConstraints.ipady = 58;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
-        add(bt_adm, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 11;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(51, 60, 0, 0);
-        add(jLabel3, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipadx = 5;
-        gridBagConstraints.ipady = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(51, 60, 0, 0);
-        add(jLabel1, gridBagConstraints);
+        add(bt_adm);
+        bt_adm.setBounds(30, 220, 160, 90);
+        add(jLabel3);
+        jLabel3.setBounds(0, 0, 0, 0);
+        add(jLabel1);
+        jLabel1.setBounds(62, 118, 5, 5);
 
         jLabel5.setBackground(new java.awt.Color(255, 102, 0));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(51, 70, 0, 0);
-        add(jLabel5, gridBagConstraints);
+        add(jLabel5);
+        jLabel5.setBounds(0, 0, 0, 0);
 
-        bt_cliente.setBackground(new java.awt.Color(255, 102, 0));
+        bt_cliente.setBackground(new java.awt.Color(255, 153, 102));
         bt_cliente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        bt_cliente.setForeground(new java.awt.Color(255, 255, 255));
+        bt_cliente.setForeground(new java.awt.Color(0, 0, 0));
         bt_cliente.setText("Cliente");
         bt_cliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -109,25 +75,13 @@ public class Tela_cadastro extends javax.swing.JPanel {
                 bt_clienteActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.ipadx = 70;
-        gridBagConstraints.ipady = 58;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 30, 0, 26);
-        add(bt_cliente, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.gridheight = 5;
-        gridBagConstraints.ipadx = 219;
-        gridBagConstraints.ipady = 214;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(51, 50, 33, 0);
-        add(jLabel4, gridBagConstraints);
+        add(bt_cliente);
+        bt_cliente.setBounds(280, 220, 153, 90);
+
+        lb_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fundo azul_480 - 392.jpg"))); // NOI18N
+        lb_back.setText("jLabel6");
+        add(lb_back);
+        lb_back.setBounds(0, 0, 480, 390);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_admActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_admActionPerformed
@@ -161,7 +115,7 @@ public class Tela_cadastro extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel lb_back;
     // End of variables declaration//GEN-END:variables
 }

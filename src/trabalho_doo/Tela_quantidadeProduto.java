@@ -2,6 +2,7 @@
 package trabalho_doo;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.SwingUtilities;
 
@@ -13,7 +14,7 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
         initComponents();
         this.produtoTxt = produto;
         tx_preco.setText(achaProduto(produto).getPrecoVenda());
-        tx_preco.setEnabled(false);
+        tx_preco.setEditable(false);
         this.clienteLogado = clienteLogado;
         lb_produto.setText(produto);
         
@@ -52,6 +53,7 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
         jLabel1.setText("Quantidade:");
 
         tx_preco.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tx_preco.setForeground(new java.awt.Color(0, 0, 0));
         tx_preco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -120,9 +122,17 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_salvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_salvarMouseClicked
+        Produto p1 = new Produto();
+        p1 = achaProduto(produtoTxt);
+       
+        if(Tela_Inicial.listaAdicionados.contains(achaProduto(produtoTxt))){
+            p1.setQuantidade(p1.getQuantidade() + Integer.parseInt(tx_quantidade.getText()));
+        }
         
+        else{
         Tela_Inicial.listaAdicionados.add(achaProduto(produtoTxt));
-        achaProduto(produtoTxt).setQuantidade(Integer.parseInt(tx_quantidade.getText()));
+        p1.setQuantidade(Integer.parseInt(tx_quantidade.getText()));
+        }
         
         Janela.t11 = new Tela_listaProdutos_cliente(clienteLogado);
         Janela janela = (Janela) SwingUtilities.getWindowAncestor(this);
