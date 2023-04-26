@@ -20,6 +20,7 @@ public class Tela_login extends javax.swing.JPanel {
         
     }
     
+    
     public boolean verificaSenhaCliente(){
         boolean existeLogin = false;
         
@@ -76,13 +77,6 @@ public class Tela_login extends javax.swing.JPanel {
             janela.pack();
     }
     
-    public void checkBoxRememeberMe(){
-        if(!cb_rememberMe.isSelected()){
-            tx_usuario.setText("");
-            tx_senha.setText("");
-        }
-    }
-    
     
      @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -94,7 +88,6 @@ public class Tela_login extends javax.swing.JPanel {
         tx_usuario = new javax.swing.JTextField();
         bt_cadastrarUsuario = new javax.swing.JButton();
         bt_entrar = new javax.swing.JButton();
-        cb_rememberMe = new javax.swing.JCheckBox();
         tx_senha = new javax.swing.JPasswordField();
         lb_usuario = new javax.swing.JLabel();
         lb_senha = new javax.swing.JLabel();
@@ -148,11 +141,6 @@ public class Tela_login extends javax.swing.JPanel {
         add(bt_entrar);
         bt_entrar.setBounds(310, 320, 140, 40);
 
-        cb_rememberMe.setForeground(new java.awt.Color(255, 153, 51));
-        cb_rememberMe.setText("Remember me");
-        add(cb_rememberMe);
-        cb_rememberMe.setBounds(140, 250, 110, 20);
-
         tx_senha.setBackground(new java.awt.Color(255, 255, 255));
         tx_senha.setForeground(new java.awt.Color(255, 255, 255));
         tx_senha.setOpaque(false);
@@ -204,7 +192,7 @@ public class Tela_login extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Login ou Senha incorretos", "ERRO", JOptionPane.ERROR_MESSAGE);
         }
         
-        checkBoxRememeberMe();
+        
         
     }//GEN-LAST:event_bt_entrarMouseClicked
 
@@ -216,7 +204,6 @@ public class Tela_login extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_cadastrarUsuario;
     private javax.swing.JButton bt_entrar;
-    private javax.swing.JCheckBox cb_rememberMe;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel lb_back;

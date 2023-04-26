@@ -2,6 +2,7 @@
 package trabalho_doo;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -28,6 +29,8 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
         jList_estoque.setModel(modelEstoque);
         
         iniciarJlists();
+        jList_produto.setOpaque(false);
+        
     }
     
     public void iniciarJlists(){
