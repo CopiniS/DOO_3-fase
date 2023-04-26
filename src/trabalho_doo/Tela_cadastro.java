@@ -25,9 +25,12 @@ public class Tela_cadastro extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         bt_cliente = new javax.swing.JButton();
+        lb_amin = new javax.swing.JLabel();
+        lb_usuario = new javax.swing.JLabel();
         lb_back = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(480, 390));
         setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
@@ -51,7 +54,7 @@ public class Tela_cadastro extends javax.swing.JPanel {
             }
         });
         add(bt_adm);
-        bt_adm.setBounds(30, 220, 160, 90);
+        bt_adm.setBounds(30, 260, 160, 40);
         add(jLabel3);
         jLabel3.setBounds(0, 0, 0, 0);
         add(jLabel1);
@@ -76,10 +79,19 @@ public class Tela_cadastro extends javax.swing.JPanel {
             }
         });
         add(bt_cliente);
-        bt_cliente.setBounds(280, 220, 153, 90);
+        bt_cliente.setBounds(280, 260, 160, 40);
+
+        lb_amin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Icon_admin_90-90.png"))); // NOI18N
+        add(lb_amin);
+        lb_amin.setBounds(60, 140, 90, 90);
+
+        lb_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/perfil-de-usuario_90-90.png"))); // NOI18N
+        add(lb_usuario);
+        lb_usuario.setBounds(320, 150, 90, 90);
 
         lb_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fundo azul_480 - 392.jpg"))); // NOI18N
         lb_back.setText("jLabel6");
+        lb_back.setPreferredSize(new java.awt.Dimension(480, 390));
         add(lb_back);
         lb_back.setBounds(0, 0, 480, 390);
     }// </editor-fold>//GEN-END:initComponents
@@ -116,6 +128,8 @@ public class Tela_cadastro extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel lb_amin;
     private javax.swing.JLabel lb_back;
+    private javax.swing.JLabel lb_usuario;
     // End of variables declaration//GEN-END:variables
 }

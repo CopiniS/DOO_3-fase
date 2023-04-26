@@ -66,7 +66,6 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
@@ -89,6 +88,7 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
         bt_cadastrarProdutos = new javax.swing.JButton();
         bt_remover = new javax.swing.JButton();
         bt_voltaLogin = new javax.swing.JButton();
+        lb_back = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -98,13 +98,15 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jList1);
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(new java.awt.GridBagLayout());
+        setPreferredSize(new java.awt.Dimension(1050, 851));
+        setLayout(null);
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setForeground(new java.awt.Color(255, 102, 0));
 
         jList_produto.setBackground(new java.awt.Color(255, 255, 255));
-        jList_produto.setForeground(new java.awt.Color(0, 0, 0));
+        jList_produto.setForeground(new java.awt.Color(255, 255, 255));
+        jList_produto.setOpaque(false);
         jList_produto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jList_produtoMouseClicked(evt);
@@ -112,25 +114,15 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(jList_produto);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 135;
-        gridBagConstraints.ipady = 458;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(2, 80, 50, 0);
-        add(jScrollPane2, gridBagConstraints);
+        add(jScrollPane2);
+        jScrollPane2.setBounds(81, 313, 197, 488);
 
         jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane3.setForeground(new java.awt.Color(255, 102, 0));
 
         jList_estoque.setBackground(new java.awt.Color(255, 255, 255));
-        jList_estoque.setForeground(new java.awt.Color(0, 0, 0));
+        jList_estoque.setForeground(new java.awt.Color(255, 255, 255));
+        jList_estoque.setOpaque(false);
         jList_estoque.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jList_estoqueMouseClicked(evt);
@@ -138,25 +130,15 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(jList_estoque);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 28;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 135;
-        gridBagConstraints.ipady = 458;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(2, 6, 50, 0);
-        add(jScrollPane3, gridBagConstraints);
+        add(jScrollPane3);
+        jScrollPane3.setBounds(608, 313, 161, 488);
 
         jScrollPane4.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane4.setForeground(new java.awt.Color(255, 102, 0));
 
         jList_categoria.setBackground(new java.awt.Color(255, 255, 255));
-        jList_categoria.setForeground(new java.awt.Color(0, 0, 0));
+        jList_categoria.setForeground(new java.awt.Color(255, 255, 255));
+        jList_categoria.setOpaque(false);
         jList_categoria.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jList_categoriaMouseClicked(evt);
@@ -164,25 +146,15 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
         });
         jScrollPane4.setViewportView(jList_categoria);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.gridheight = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 135;
-        gridBagConstraints.ipady = 458;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(2, 6, 50, 0);
-        add(jScrollPane4, gridBagConstraints);
+        add(jScrollPane4);
+        jScrollPane4.setBounds(284, 313, 151, 488);
 
         jScrollPane5.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane5.setForeground(new java.awt.Color(255, 102, 0));
 
         jList_lucro.setBackground(new java.awt.Color(255, 255, 255));
-        jList_lucro.setForeground(new java.awt.Color(0, 0, 0));
+        jList_lucro.setForeground(new java.awt.Color(255, 255, 255));
+        jList_lucro.setOpaque(false);
         jList_lucro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jList_lucroMouseClicked(evt);
@@ -190,102 +162,54 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
         });
         jScrollPane5.setViewportView(jList_lucro);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 9;
-        gridBagConstraints.gridheight = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 135;
-        gridBagConstraints.ipady = 458;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(2, 6, 50, 0);
-        add(jScrollPane5, gridBagConstraints);
+        add(jScrollPane5);
+        jScrollPane5.setBounds(441, 313, 161, 488);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 51));
         jLabel1.setText("%Lucro");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 15;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(120, 50, 0, 0);
-        add(jLabel1, gridBagConstraints);
+        add(jLabel1);
+        jLabel1.setBounds(485, 266, 73, 45);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 51));
         jLabel2.setText("Produto");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 8;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(120, 115, 0, 0);
-        add(jLabel2, gridBagConstraints);
+        add(jLabel2);
+        jLabel2.setBounds(116, 266, 73, 45);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 153, 51));
         jLabel3.setText("Categoria");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 20;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(120, 33, 0, 0);
-        add(jLabel3, gridBagConstraints);
+        add(jLabel3);
+        jLabel3.setBounds(311, 266, 96, 45);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 153, 51));
         jLabel4.setText("Estoque");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 28;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 9;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(120, 46, 0, 0);
-        add(jLabel4, gridBagConstraints);
+        add(jLabel4);
+        jLabel4.setBounds(648, 266, 73, 45);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel5.setForeground(new java.awt.Color(255, 153, 51));
         jLabel5.setText("Lista de Produtos");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 8;
-        gridBagConstraints.ipadx = 17;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 38, 0, 0);
-        add(jLabel5, gridBagConstraints);
+        add(jLabel5);
+        jLabel5.setBounds(316, 21, 216, 32);
 
-        bt_editar.setBackground(new java.awt.Color(255, 255, 255));
-        bt_editar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_editar.setForeground(new java.awt.Color(255, 102, 0));
+        bt_editar.setBackground(new java.awt.Color(255, 153, 102));
+        bt_editar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt_editar.setForeground(new java.awt.Color(0, 0, 0));
         bt_editar.setText("Editar");
         bt_editar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_editarMouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 30;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 66;
-        gridBagConstraints.ipady = -7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 79, 0, 54);
-        add(bt_editar, gridBagConstraints);
+        add(bt_editar);
+        bt_editar.setBounds(810, 320, 200, 30);
 
-        bt_estoque.setBackground(new java.awt.Color(255, 255, 255));
-        bt_estoque.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_estoque.setForeground(new java.awt.Color(255, 102, 0));
+        bt_estoque.setBackground(new java.awt.Color(255, 153, 102));
+        bt_estoque.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt_estoque.setForeground(new java.awt.Color(0, 0, 0));
         bt_estoque.setText("Alterar estoque");
         bt_estoque.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -297,74 +221,48 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
                 bt_estoqueActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 30;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.ipadx = 29;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(117, 79, 0, 54);
-        add(bt_estoque, gridBagConstraints);
+        add(bt_estoque);
+        bt_estoque.setBounds(810, 620, 200, 30);
 
-        bt_imprimirCatalogo.setBackground(new java.awt.Color(255, 255, 255));
-        bt_imprimirCatalogo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_imprimirCatalogo.setForeground(new java.awt.Color(255, 102, 0));
+        bt_imprimirCatalogo.setBackground(new java.awt.Color(255, 153, 102));
+        bt_imprimirCatalogo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt_imprimirCatalogo.setForeground(new java.awt.Color(0, 0, 0));
         bt_imprimirCatalogo.setText("Imprimir Catálogo");
         bt_imprimirCatalogo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_imprimirCatalogoMouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 20;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 10;
-        gridBagConstraints.ipadx = 10;
-        gridBagConstraints.ipady = -7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(68, 17, 0, 0);
-        add(bt_imprimirCatalogo, gridBagConstraints);
+        add(bt_imprimirCatalogo);
+        bt_imprimirCatalogo.setBounds(570, 110, 200, 30);
 
-        bt_cadastrarProdutos.setBackground(new java.awt.Color(255, 255, 255));
-        bt_cadastrarProdutos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_cadastrarProdutos.setForeground(new java.awt.Color(255, 102, 0));
+        bt_cadastrarProdutos.setBackground(new java.awt.Color(255, 153, 102));
+        bt_cadastrarProdutos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt_cadastrarProdutos.setForeground(new java.awt.Color(0, 0, 0));
         bt_cadastrarProdutos.setText("Cadastrar Produto");
         bt_cadastrarProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_cadastrarProdutosMouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.ipady = -7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(68, 80, 0, 0);
-        add(bt_cadastrarProdutos, gridBagConstraints);
+        add(bt_cadastrarProdutos);
+        bt_cadastrarProdutos.setBounds(80, 110, 200, 30);
 
-        bt_remover.setBackground(new java.awt.Color(255, 255, 255));
-        bt_remover.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_remover.setForeground(new java.awt.Color(255, 102, 0));
+        bt_remover.setBackground(new java.awt.Color(255, 153, 102));
+        bt_remover.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt_remover.setForeground(new java.awt.Color(0, 0, 0));
         bt_remover.setText("Remover");
         bt_remover.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_removerMouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 30;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = -7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(97, 79, 0, 54);
-        add(bt_remover, gridBagConstraints);
+        add(bt_remover);
+        bt_remover.setBounds(810, 460, 200, 30);
 
-        bt_voltaLogin.setBackground(new java.awt.Color(255, 255, 255));
-        bt_voltaLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_voltaLogin.setForeground(new java.awt.Color(255, 102, 0));
+        bt_voltaLogin.setBackground(new java.awt.Color(255, 153, 102));
+        bt_voltaLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt_voltaLogin.setForeground(new java.awt.Color(0, 0, 0));
         bt_voltaLogin.setText("Voltar ao Login");
         bt_voltaLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -376,14 +274,12 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
                 bt_voltaLoginActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 30;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.ipadx = 33;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(117, 79, 0, 54);
-        add(bt_voltaLogin, gridBagConstraints);
+        add(bt_voltaLogin);
+        bt_voltaLogin.setBounds(810, 770, 200, 30);
+
+        lb_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/1050-851.jpg"))); // NOI18N
+        add(lb_back);
+        lb_back.setBounds(0, 0, 1050, 850);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_estoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_estoqueActionPerformed
@@ -502,5 +398,6 @@ public class Tela_listaProdutos_adm extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JLabel lb_back;
     // End of variables declaration//GEN-END:variables
 }

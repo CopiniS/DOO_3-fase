@@ -118,6 +118,8 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList_produtos = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
@@ -134,11 +136,21 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         bt_irCarrinho = new javax.swing.JButton();
         lb_valorCarrinho = new javax.swing.JLabel();
         bt_voltar = new javax.swing.JButton();
+        lb_total = new javax.swing.JLabel();
+        lb_back = new javax.swing.JLabel();
+
+        jLabel4.setText("jLabel4");
+
+        jLabel6.setText("jLabel6");
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(684, 644));
+        setLayout(null);
 
         jList_produtos.setBackground(new java.awt.Color(255, 255, 255));
         jList_produtos.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jList_produtos.setOpaque(false
+        );
         jList_produtos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jList_produtosMouseClicked(evt);
@@ -146,24 +158,37 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jList_produtos);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(36, 277, 214, 270);
+        add(jLabel1);
+        jLabel1.setBounds(45, 40, 94, 24);
+
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel5.setForeground(new java.awt.Color(255, 153, 51));
         jLabel5.setText("Lista de Produtos");
+        add(jLabel5);
+        jLabel5.setBounds(212, 6, 219, 32);
 
         tx_infosProduto.setBackground(new java.awt.Color(255, 255, 255));
         tx_infosProduto.setColumns(20);
         tx_infosProduto.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tx_infosProduto.setForeground(new java.awt.Color(0, 0, 0));
         tx_infosProduto.setRows(5);
+        tx_infosProduto.setOpaque(false);
         jScrollPane2.setViewportView(tx_infosProduto);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel2.setText("Informações do produto selecionado:");
+        add(jScrollPane2);
+        jScrollPane2.setBounds(290, 280, 360, 163);
 
-        bt_addCarrinho.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 51));
+        jLabel2.setText("Informações do produto selecionado:");
+        add(jLabel2);
+        jLabel2.setBounds(290, 230, 330, 31);
+
+        bt_addCarrinho.setBackground(new java.awt.Color(255, 153, 102));
         bt_addCarrinho.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        bt_addCarrinho.setForeground(new java.awt.Color(255, 102, 0));
+        bt_addCarrinho.setForeground(new java.awt.Color(0, 0, 0));
         bt_addCarrinho.setText("Adicionar ao carrinho");
         bt_addCarrinho.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -175,12 +200,16 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
                 bt_addCarrinhoActionPerformed(evt);
             }
         });
+        add(bt_addCarrinho);
+        bt_addCarrinho.setBounds(290, 480, 160, 27);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 153, 51));
         jLabel3.setText("Produtos");
+        add(jLabel3);
+        jLabel3.setBounds(40, 230, 90, 31);
 
-        cb_categoria.setBackground(new java.awt.Color(255, 255, 255));
+        cb_categoria.setBackground(new java.awt.Color(255, 153, 102));
         cb_categoria.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         cb_categoria.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -192,9 +221,11 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
                 cb_categoriaActionPerformed(evt);
             }
         });
+        add(cb_categoria);
+        cb_categoria.setBounds(40, 160, 158, 30);
 
-        cb_marca.setBackground(new java.awt.Color(255, 255, 255));
-        cb_marca.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        cb_marca.setBackground(new java.awt.Color(255, 153, 102));
+        cb_marca.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cb_marca.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cb_marcaMouseClicked(evt);
@@ -205,18 +236,24 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
                 cb_marcaActionPerformed(evt);
             }
         });
+        add(cb_marca);
+        cb_marca.setBounds(400, 157, 158, 31);
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 153, 51));
         jLabel7.setText("Marca");
+        add(jLabel7);
+        jLabel7.setBounds(400, 114, 60, 25);
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 153, 51));
         jLabel8.setText("Categoria");
+        add(jLabel8);
+        jLabel8.setBounds(45, 114, 119, 25);
 
-        bt_irCarrinho.setBackground(new java.awt.Color(255, 255, 255));
+        bt_irCarrinho.setBackground(new java.awt.Color(255, 153, 102));
         bt_irCarrinho.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        bt_irCarrinho.setForeground(new java.awt.Color(255, 102, 0));
+        bt_irCarrinho.setForeground(new java.awt.Color(0, 0, 0));
         bt_irCarrinho.setText("Ir ao Carrinho");
         bt_irCarrinho.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -228,14 +265,20 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
                 bt_irCarrinhoActionPerformed(evt);
             }
         });
+        add(bt_irCarrinho);
+        bt_irCarrinho.setBounds(480, 480, 170, 29);
 
         lb_valorCarrinho.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lb_valorCarrinho.setForeground(new java.awt.Color(0, 0, 0));
+        lb_valorCarrinho.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lb_valorCarrinho.setText("<Valor do carrinho>");
+        lb_valorCarrinho.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        add(lb_valorCarrinho);
+        lb_valorCarrinho.setBounds(530, 590, 126, 30);
 
-        bt_voltar.setBackground(new java.awt.Color(255, 255, 255));
+        bt_voltar.setBackground(new java.awt.Color(255, 153, 102));
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        bt_voltar.setForeground(new java.awt.Color(255, 102, 0));
+        bt_voltar.setForeground(new java.awt.Color(0, 0, 0));
         bt_voltar.setText("Voltar");
         bt_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -247,91 +290,20 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
                 bt_voltarActionPerformed(evt);
             }
         });
+        add(bt_voltar);
+        bt_voltar.setBounds(40, 580, 175, 29);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(45, 45, 45)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(64, 64, 64)
-                            .addComponent(jLabel3))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(36, 36, 36)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(12, 12, 12)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(18, 18, 18)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(bt_irCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addGap(32, 32, 32)
-                                                    .addComponent(lb_valorCarrinho))))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(bt_addCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addComponent(jLabel2)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(45, 45, 45)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cb_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cb_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel7))
-                            .addGap(100, 100, 100)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(212, 212, 212)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jLabel5)
-                .addGap(2, 2, 2)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cb_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cb_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(bt_addCarrinho)
-                                .addGap(41, 41, 41)
-                                .addComponent(bt_irCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lb_valorCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(70, Short.MAX_VALUE))
-        );
+        lb_total.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lb_total.setForeground(new java.awt.Color(0, 0, 0));
+        lb_total.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lb_total.setText("Total:");
+        lb_total.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        add(lb_total);
+        lb_total.setBounds(470, 590, 59, 30);
+
+        lb_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fundo azul_680-640.jpg"))); // NOI18N
+        add(lb_back);
+        lb_back.setBounds(0, 0, 680, 640);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_addCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_addCarrinhoActionPerformed
@@ -438,12 +410,16 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JList<String> jList_produtos;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lb_back;
+    private javax.swing.JLabel lb_total;
     private javax.swing.JLabel lb_valorCarrinho;
     private javax.swing.JTextArea tx_infosProduto;
     // End of variables declaration//GEN-END:variables

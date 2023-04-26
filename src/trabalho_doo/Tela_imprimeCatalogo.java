@@ -98,7 +98,8 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
         rb_naoPrecos = new javax.swing.JRadioButton();
         bt_voltar = new javax.swing.JButton();
         bt_imprime = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
+        lb_back = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -112,125 +113,106 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
         );
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(493, 376));
+        setRequestFocusEnabled(false);
+        setLayout(null);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel5.setForeground(new java.awt.Color(255, 153, 0));
         jLabel5.setText("Catálogo");
+        add(jLabel5);
+        jLabel5.setBounds(155, 6, 123, 32);
 
         buttonGroup1.add(rb_categoria);
-        rb_categoria.setForeground(new java.awt.Color(255, 102, 0));
+        rb_categoria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        rb_categoria.setForeground(new java.awt.Color(255, 255, 255));
         rb_categoria.setText("Categoria");
+        add(rb_categoria);
+        rb_categoria.setBounds(47, 143, 91, 29);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 0));
         jLabel1.setText("Separar por:");
+        add(jLabel1);
+        jLabel1.setBounds(47, 93, 113, 32);
 
         buttonGroup1.add(rb_forndecedor);
-        rb_forndecedor.setForeground(new java.awt.Color(255, 102, 0));
+        rb_forndecedor.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        rb_forndecedor.setForeground(new java.awt.Color(255, 255, 255));
         rb_forndecedor.setText("Fornecedor");
+        add(rb_forndecedor);
+        rb_forndecedor.setBounds(47, 178, 91, 29);
 
         buttonGroup1.add(rb_marca);
-        rb_marca.setForeground(new java.awt.Color(255, 102, 0));
+        rb_marca.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        rb_marca.setForeground(new java.awt.Color(255, 255, 255));
         rb_marca.setText("Marca");
+        add(rb_marca);
+        rb_marca.setBounds(47, 212, 91, 29);
 
         buttonGroup2.add(rb_somenteVenda);
-        rb_somenteVenda.setForeground(new java.awt.Color(255, 102, 0));
+        rb_somenteVenda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        rb_somenteVenda.setForeground(new java.awt.Color(255, 255, 255));
         rb_somenteVenda.setText("Mostrar somente de venda");
+        add(rb_somenteVenda);
+        rb_somenteVenda.setBounds(210, 140, 210, 25);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 0));
         jLabel2.setText("Preço:");
+        add(jLabel2);
+        jLabel2.setBounds(210, 90, 113, 32);
 
         buttonGroup2.add(rb_custoVenda);
-        rb_custoVenda.setForeground(new java.awt.Color(255, 102, 0));
+        rb_custoVenda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        rb_custoVenda.setForeground(new java.awt.Color(255, 255, 255));
         rb_custoVenda.setText("Mostrar preço de custo e de venda");
+        rb_custoVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_custoVendaActionPerformed(evt);
+            }
+        });
+        add(rb_custoVenda);
+        rb_custoVenda.setBounds(210, 180, 270, 25);
 
         buttonGroup2.add(rb_naoPrecos);
-        rb_naoPrecos.setForeground(new java.awt.Color(255, 102, 0));
+        rb_naoPrecos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        rb_naoPrecos.setForeground(new java.awt.Color(255, 255, 255));
         rb_naoPrecos.setText("Não exibir preços");
+        add(rb_naoPrecos);
+        rb_naoPrecos.setBounds(210, 220, 130, 21);
 
-        bt_voltar.setBackground(new java.awt.Color(255, 255, 255));
+        bt_voltar.setBackground(new java.awt.Color(255, 153, 102));
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        bt_voltar.setForeground(new java.awt.Color(255, 102, 0));
+        bt_voltar.setForeground(new java.awt.Color(0, 0, 0));
         bt_voltar.setText("Voltar");
         bt_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_voltarMouseClicked(evt);
             }
         });
+        add(bt_voltar);
+        bt_voltar.setBounds(33, 319, 111, 39);
 
-        bt_imprime.setBackground(new java.awt.Color(255, 255, 255));
+        bt_imprime.setBackground(new java.awt.Color(255, 153, 102));
         bt_imprime.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        bt_imprime.setForeground(new java.awt.Color(255, 102, 0));
+        bt_imprime.setForeground(new java.awt.Color(0, 0, 0));
         bt_imprime.setText("Imprimir");
         bt_imprime.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_imprimeMouseClicked(evt);
             }
         });
+        add(bt_imprime);
+        bt_imprime.setBounds(334, 319, 111, 39);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(155, 155, 155)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(47, 47, 47)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(rb_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(rb_forndecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(rb_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(80, 80, 80)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(rb_somenteVenda)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(rb_custoVenda)
-                                .addComponent(rb_naoPrecos))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bt_imprime, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(45, Short.MAX_VALUE))
-            .addComponent(jSeparator1)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(rb_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rb_forndecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5)
-                        .addComponent(rb_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(rb_somenteVenda)
-                        .addGap(18, 18, 18)
-                        .addComponent(rb_custoVenda)
-                        .addGap(18, 18, 18)
-                        .addComponent(rb_naoPrecos)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bt_imprime, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24))
-        );
+        lb_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fundo azul_490-482.jpg"))); // NOI18N
+        add(lb_back);
+        lb_back.setBounds(0, 0, 490, 380);
+
+        jLabel4.setText("jLabel4");
+        add(jLabel4);
+        jLabel4.setBounds(0, 0, 70, 60);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_imprimeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_imprimeMouseClicked
@@ -255,6 +237,10 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
         janela.pack();
     }//GEN-LAST:event_bt_voltarMouseClicked
 
+    private void rb_custoVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_custoVendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rb_custoVendaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_imprime;
@@ -264,8 +250,9 @@ public class Tela_imprimeCatalogo extends javax.swing.JPanel {
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lb_back;
     private javax.swing.JRadioButton rb_categoria;
     private javax.swing.JRadioButton rb_custoVenda;
     private javax.swing.JRadioButton rb_forndecedor;

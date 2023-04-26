@@ -16,6 +16,8 @@ public class Tela_login extends javax.swing.JPanel {
     public Tela_login() {
         initComponents();
         
+        
+        
     }
     
     public boolean verificaSenhaCliente(){
@@ -112,7 +114,8 @@ public class Tela_login extends javax.swing.JPanel {
         lb_login.setBounds(190, 30, 64, 32);
 
         tx_usuario.setBackground(new java.awt.Color(255, 255, 255));
-        tx_usuario.setForeground(new java.awt.Color(0, 0, 0));
+        tx_usuario.setForeground(new java.awt.Color(255, 255, 255));
+        tx_usuario.setOpaque(false);
         tx_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tx_usuarioActionPerformed(evt);
@@ -151,7 +154,8 @@ public class Tela_login extends javax.swing.JPanel {
         cb_rememberMe.setBounds(140, 250, 110, 20);
 
         tx_senha.setBackground(new java.awt.Color(255, 255, 255));
-        tx_senha.setForeground(new java.awt.Color(0, 0, 0));
+        tx_senha.setForeground(new java.awt.Color(255, 255, 255));
+        tx_senha.setOpaque(false);
         add(tx_senha);
         tx_senha.setBounds(140, 210, 180, 22);
 
