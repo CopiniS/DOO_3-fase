@@ -201,7 +201,7 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
             }
         });
         add(bt_addCarrinho);
-        bt_addCarrinho.setBounds(290, 480, 160, 27);
+        bt_addCarrinho.setBounds(280, 480, 180, 27);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 51));
@@ -210,7 +210,7 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         jLabel3.setBounds(40, 230, 90, 31);
 
         cb_categoria.setBackground(new java.awt.Color(255, 153, 102));
-        cb_categoria.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        cb_categoria.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cb_categoria.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cb_categoriaMouseClicked(evt);
@@ -225,7 +225,7 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         cb_categoria.setBounds(40, 160, 158, 30);
 
         cb_marca.setBackground(new java.awt.Color(255, 153, 102));
-        cb_marca.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cb_marca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cb_marca.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cb_marcaMouseClicked(evt);
@@ -237,7 +237,7 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
             }
         });
         add(cb_marca);
-        cb_marca.setBounds(400, 157, 158, 31);
+        cb_marca.setBounds(400, 160, 158, 30);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 153, 51));
@@ -266,15 +266,15 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
             }
         });
         add(bt_irCarrinho);
-        bt_irCarrinho.setBounds(480, 480, 170, 29);
+        bt_irCarrinho.setBounds(480, 480, 180, 29);
 
-        lb_valorCarrinho.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lb_valorCarrinho.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lb_valorCarrinho.setForeground(new java.awt.Color(0, 0, 0));
         lb_valorCarrinho.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lb_valorCarrinho.setText("<Valor do carrinho>");
         lb_valorCarrinho.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         add(lb_valorCarrinho);
-        lb_valorCarrinho.setBounds(530, 590, 126, 30);
+        lb_valorCarrinho.setBounds(500, 590, 170, 30);
 
         bt_voltar.setBackground(new java.awt.Color(255, 153, 102));
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -293,13 +293,13 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         add(bt_voltar);
         bt_voltar.setBounds(40, 580, 175, 29);
 
-        lb_total.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lb_total.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lb_total.setForeground(new java.awt.Color(0, 0, 0));
         lb_total.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lb_total.setText("Total:");
         lb_total.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         add(lb_total);
-        lb_total.setBounds(470, 590, 59, 30);
+        lb_total.setBounds(440, 590, 59, 30);
 
         lb_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fundo azul_680-640.jpg"))); // NOI18N
         add(lb_back);

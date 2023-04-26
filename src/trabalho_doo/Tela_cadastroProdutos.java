@@ -20,7 +20,6 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
         
         p1.setNome(tx_nome.getText());
         p1.setCategoria(tx_categoria.getText());
-        p1.setFornecedor(tx_fornecedor.getText());
         p1.setMarca(tx_marca.getText());
         p1.setPrecoCusto(tx_precoCusto.getText());
         p1.setPrecoVenda(tx_precoVenda.getText());
@@ -148,7 +147,6 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
     public void limparTextos(){
         tx_nome.setText("");
         tx_categoria.setText("");
-        tx_fornecedor.setText("");
         tx_marca.setText("");
         tx_precoCusto.setText("");
         tx_precoVenda.setText("");
@@ -159,7 +157,7 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
     public boolean tratarErro(){
         boolean existeErro = false;
         
-        if(tx_nome.getText().isBlank() || tx_categoria.getText().isBlank()||tx_fornecedor.getText().isBlank()||
+        if(tx_nome.getText().isBlank() || tx_categoria.getText().isBlank()||
         tx_marca.getText().isBlank() || tx_precoCusto.getText().isBlank() || tx_precoVenda.getText().isBlank() || 
         tx_estoque.getText().isBlank()){
             JOptionPane.showMessageDialog(null, "Digite todos os campos obrigatórios", 
@@ -189,7 +187,6 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -197,14 +194,13 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         tx_precoCusto = new javax.swing.JTextField();
-        tx_fornecedor = new javax.swing.JTextField();
         tx_estoque = new javax.swing.JTextField();
         tx_precoVenda = new javax.swing.JTextField();
         tx_marca = new javax.swing.JTextField();
         tx_categoria = new javax.swing.JTextField();
         bt_voltar = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         bt_salvar = new javax.swing.JButton();
+        lb_back = new javax.swing.JLabel();
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -212,64 +208,61 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
         jButton1.setText("Salvar");
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(429, 495));
         setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 153, 51));
         jLabel1.setText("Cadastro de Produtos");
         add(jLabel1);
-        jLabel1.setBounds(145, 41, 293, 32);
+        jLabel1.setBounds(80, 20, 270, 32);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 51));
         jLabel2.setText("Nome: ");
         add(jLabel2);
-        jLabel2.setBounds(83, 113, 58, 27);
+        jLabel2.setBounds(40, 80, 70, 27);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 153, 51));
         jLabel4.setText("Preço de custo:");
         add(jLabel4);
-        jLabel4.setBounds(83, 152, 149, 27);
+        jLabel4.setBounds(40, 250, 149, 27);
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 102, 51));
-        jLabel5.setText("Fornecedor:");
-        add(jLabel5);
-        jLabel5.setBounds(83, 200, 100, 27);
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 153, 51));
         jLabel6.setText("Preço de venda:");
         add(jLabel6);
-        jLabel6.setBounds(461, 152, 137, 27);
+        jLabel6.setBounds(220, 250, 137, 27);
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 153, 51));
         jLabel7.setText("Marca:");
         add(jLabel7);
-        jLabel7.setBounds(522, 200, 64, 27);
+        jLabel7.setBounds(220, 160, 64, 27);
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 153, 51));
         jLabel8.setText("Estoque:");
         add(jLabel8);
-        jLabel8.setBounds(83, 259, 100, 25);
+        jLabel8.setBounds(120, 340, 100, 25);
 
         tx_nome.setBackground(new java.awt.Color(255, 255, 255));
+        tx_nome.setForeground(new java.awt.Color(255, 255, 255));
+        tx_nome.setOpaque(false);
         tx_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tx_nomeActionPerformed(evt);
             }
         });
         add(tx_nome);
-        tx_nome.setBounds(153, 115, 282, 22);
+        tx_nome.setBounds(40, 110, 340, 22);
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 153, 51));
         jLabel9.setText("Categoria:");
         add(jLabel9);
-        jLabel9.setBounds(503, 114, 95, 25);
+        jLabel9.setBounds(40, 160, 95, 25);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 102, 51));
@@ -277,47 +270,53 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
         jLabel10.setBounds(0, 0, 0, 0);
 
         tx_precoCusto.setBackground(new java.awt.Color(255, 255, 255));
+        tx_precoCusto.setForeground(new java.awt.Color(255, 255, 255));
+        tx_precoCusto.setOpaque(false);
         tx_precoCusto.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tx_precoCustoKeyTyped(evt);
             }
         });
         add(tx_precoCusto);
-        tx_precoCusto.setBounds(238, 154, 144, 22);
-
-        tx_fornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        add(tx_fornecedor);
-        tx_fornecedor.setBounds(203, 202, 152, 22);
+        tx_precoCusto.setBounds(40, 280, 140, 22);
 
         tx_estoque.setBackground(new java.awt.Color(255, 255, 255));
+        tx_estoque.setForeground(new java.awt.Color(255, 255, 255));
+        tx_estoque.setOpaque(false);
         tx_estoque.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tx_estoqueKeyTyped(evt);
             }
         });
         add(tx_estoque);
-        tx_estoque.setBounds(189, 260, 164, 22);
+        tx_estoque.setBounds(120, 370, 164, 22);
 
         tx_precoVenda.setBackground(new java.awt.Color(255, 255, 255));
+        tx_precoVenda.setForeground(new java.awt.Color(255, 255, 255));
+        tx_precoVenda.setOpaque(false);
         tx_precoVenda.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tx_precoVendaKeyTyped(evt);
             }
         });
         add(tx_precoVenda);
-        tx_precoVenda.setBounds(604, 160, 160, 22);
+        tx_precoVenda.setBounds(220, 280, 160, 22);
 
         tx_marca.setBackground(new java.awt.Color(255, 255, 255));
+        tx_marca.setForeground(new java.awt.Color(255, 255, 255));
+        tx_marca.setOpaque(false);
         add(tx_marca);
-        tx_marca.setBounds(604, 202, 227, 22);
+        tx_marca.setBounds(220, 190, 160, 22);
 
         tx_categoria.setBackground(new java.awt.Color(255, 255, 255));
+        tx_categoria.setForeground(new java.awt.Color(255, 255, 255));
+        tx_categoria.setOpaque(false);
         add(tx_categoria);
-        tx_categoria.setBounds(598, 115, 208, 22);
+        tx_categoria.setBounds(40, 190, 140, 22);
 
-        bt_voltar.setBackground(new java.awt.Color(255, 255, 255));
+        bt_voltar.setBackground(new java.awt.Color(255, 153, 102));
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        bt_voltar.setForeground(new java.awt.Color(255, 102, 0));
+        bt_voltar.setForeground(new java.awt.Color(0, 0, 0));
         bt_voltar.setText("Voltar");
         bt_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -325,21 +324,28 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
             }
         });
         add(bt_voltar);
-        bt_voltar.setBounds(80, 434, 113, 34);
-        add(jSeparator1);
-        jSeparator1.setBounds(-16, 411, 1050, 11);
+        bt_voltar.setBounds(40, 430, 113, 34);
 
-        bt_salvar.setBackground(new java.awt.Color(255, 255, 255));
+        bt_salvar.setBackground(new java.awt.Color(255, 153, 102));
         bt_salvar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        bt_salvar.setForeground(new java.awt.Color(255, 102, 0));
+        bt_salvar.setForeground(new java.awt.Color(0, 0, 0));
         bt_salvar.setText("Salvar");
         bt_salvar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_salvarMouseClicked(evt);
             }
         });
+        bt_salvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_salvarActionPerformed(evt);
+            }
+        });
         add(bt_salvar);
-        bt_salvar.setBounds(874, 434, 113, 34);
+        bt_salvar.setBounds(270, 430, 113, 34);
+
+        lb_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fundo azul_429-518.jpg"))); // NOI18N
+        add(lb_back);
+        lb_back.setBounds(0, 0, 430, 490);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tx_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_nomeActionPerformed
@@ -383,6 +389,10 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_tx_estoqueKeyTyped
 
+    private void bt_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salvarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_salvarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_salvar;
@@ -392,15 +402,13 @@ public class Tela_cadastroProdutos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lb_back;
     private javax.swing.JTextField tx_categoria;
     private javax.swing.JTextField tx_estoque;
-    private javax.swing.JTextField tx_fornecedor;
     private javax.swing.JTextField tx_marca;
     private javax.swing.JTextField tx_nome;
     private javax.swing.JTextField tx_precoCusto;
