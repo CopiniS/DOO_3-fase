@@ -119,13 +119,13 @@ public class Tela_carrinho extends javax.swing.JPanel {
         lb_valorTotal.setForeground(new java.awt.Color(255, 255, 255));
         lb_valorTotal.setText("<valor tota>");
         add(lb_valorTotal);
-        lb_valorTotal.setBounds(630, 490, 90, 28);
+        lb_valorTotal.setBounds(610, 490, 90, 28);
 
         lb_total.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lb_total.setForeground(new java.awt.Color(255, 255, 255));
         lb_total.setText("Total:");
         add(lb_total);
-        lb_total.setBounds(570, 490, 50, 28);
+        lb_total.setBounds(550, 490, 50, 28);
 
         bt_editar.setBackground(new java.awt.Color(255, 153, 102));
         bt_editar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N

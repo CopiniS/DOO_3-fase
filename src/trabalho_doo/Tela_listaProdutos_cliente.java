@@ -14,6 +14,7 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     ArrayList<Produto> listaFiltrosMarca;
     ArrayList<Produto> listaFiltrosGeral;
     Cliente clienteLogado;
+    double somaTotal;
     
     
     public Tela_listaProdutos_cliente(Cliente clientelogado) {
@@ -27,6 +28,7 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         this.clienteLogado = clientelogado;
         tx_infosProduto.setEditable(false);
         iniciarComboBox();
+        somaTotal = 0;
     }
     
    
@@ -113,6 +115,10 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         
     }
     
+    public void calculaSomaValorTotal(){
+        
+    }
+    
     
    
     @SuppressWarnings("unchecked")
@@ -135,9 +141,7 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         bt_irCarrinho = new javax.swing.JButton();
-        lb_valorCarrinho = new javax.swing.JLabel();
         bt_voltar = new javax.swing.JButton();
-        lb_total = new javax.swing.JLabel();
         lb_back = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
@@ -269,14 +273,6 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         add(bt_irCarrinho);
         bt_irCarrinho.setBounds(480, 480, 180, 29);
 
-        lb_valorCarrinho.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lb_valorCarrinho.setForeground(new java.awt.Color(0, 0, 0));
-        lb_valorCarrinho.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lb_valorCarrinho.setText("<Valor do carrinho>");
-        lb_valorCarrinho.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        add(lb_valorCarrinho);
-        lb_valorCarrinho.setBounds(500, 590, 170, 30);
-
         bt_voltar.setBackground(new java.awt.Color(255, 153, 102));
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         bt_voltar.setForeground(new java.awt.Color(0, 0, 0));
@@ -293,14 +289,6 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
         });
         add(bt_voltar);
         bt_voltar.setBounds(40, 580, 175, 29);
-
-        lb_total.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lb_total.setForeground(new java.awt.Color(0, 0, 0));
-        lb_total.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lb_total.setText("Total:");
-        lb_total.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        add(lb_total);
-        lb_total.setBounds(440, 590, 59, 30);
 
         lb_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fundo azul_680-640.jpg"))); // NOI18N
         add(lb_back);
@@ -430,8 +418,6 @@ public class Tela_listaProdutos_cliente extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lb_back;
-    private javax.swing.JLabel lb_total;
-    private javax.swing.JLabel lb_valorCarrinho;
     private javax.swing.JTextArea tx_infosProduto;
     // End of variables declaration//GEN-END:variables
 }

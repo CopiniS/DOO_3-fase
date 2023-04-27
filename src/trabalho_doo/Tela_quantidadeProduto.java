@@ -35,14 +35,11 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
     public void alteraEstoque(){
             Produto p1 = new Produto();
             p1 = achaProduto(produtoTxt);
-            if(Double.parseDouble(p1.getEstoque()) > Double.parseDouble(tx_quantidade.getText())){
                 double estoqueAtual = Double.parseDouble(p1.getEstoque()) - Double.parseDouble(tx_quantidade.getText());
                 p1.setEstoque(String.valueOf(estoqueAtual));
-            }
             
-            else{
-                 JOptionPane.showMessageDialog(null, "Quantidade insuficeiente no estoque", "ERRO", JOptionPane.ERROR_MESSAGE);
-            }
+            
+            
     }
 
     @SuppressWarnings("unchecked")
@@ -130,6 +127,8 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
         Produto p1 = new Produto();
         p1 = achaProduto(produtoTxt);
        
+        if(Double.parseDouble(p1.getEstoque()) >= Double.parseDouble(tx_quantidade.getText())){
+        
         if(Tela_Inicial.listaAdicionados.contains(achaProduto(produtoTxt))){
             p1.setQuantidade(p1.getQuantidade() + Integer.parseInt(tx_quantidade.getText()));
             alteraEstoque();
@@ -146,6 +145,13 @@ public class Tela_quantidadeProduto extends javax.swing.JPanel {
         janela.getContentPane().remove(Janela.t13);
         janela.add(Janela.t11, BorderLayout.CENTER);
         janela.pack();
+        }
+        
+        else{
+            JOptionPane.showMessageDialog(null, "Quantidade insuficeiente no estoque", "ERRO", JOptionPane.ERROR_MESSAGE);
+            }
+        
+        
     }//GEN-LAST:event_bt_salvarMouseClicked
 
     private void bt_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_voltarMouseClicked
